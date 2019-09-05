@@ -1,0 +1,94 @@
+.chatPage{
+  .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: #dccbcb;
+  border-bottom: 1px solid #e8e8e8;
+  &_logo {
+    position: absolute;
+    left: 30px;
+    & > a {
+      width: 40px;
+      display: block;
+      & > img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.messagesArea {
+  box-sizing: border-box;
+  height: calc(100vh - 180px);
+  overflow: scroll;
+  flex-direction: column;
+  padding-top: 46px;
+  .message {
+    margin: 20px 0;
+    display:flex;
+    .left-message{
+      &__img{
+          margin-top:10px;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          overflow: hidden;
+          & > img {
+            width: 100%;
+          }
+        }
+      }
+    .right-message{
+      margin-left:10px;
+      .upper-message {
+        display: flex;
+        &__name {
+          color: $black;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date {
+          display:flex;
+          color: grey;
+          font-size: 12px;
+          padding-left: 10px;
+        }
+      }
+      .lower-message {
+        margin-top: 10px;
+        &__contents {
+          color: $black;
+          font-size: 14px;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+}
+.form {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  height: 90px;
+  padding: 20px 50px 20px 40px;
+  border: solid 3px #dccbcb;
+    border-radius: 10px;
+  &__message {
+    border: none;
+    float: left;
+    height: 50px;
+    width: calc(100% - 150px);
+  }
+  &__submit {
+    background-color: gray;
+    border: none;
+    color: $white;
+    float: right;
+    font-size: 16px;
+    height: 50px;
+    margin-left: 15px;
+    padding: 0 30px;
+  }
+}
+}

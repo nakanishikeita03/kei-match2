@@ -1,0 +1,30 @@
+<div class='usershowPage'>
+    <header class="header">
+      <p class='header_logo'>
+        <%= link_to image_tag("match1.png"), new_group_path %>
+      </p>
+    </header>
+    <div class='userInfo'>
+      <div class='userInfo_img'>
+        <%= image_tag @user.img_name.url(:thumb) %>
+      </div>
+      <section class="card">
+      <div class="card-content">
+        <h1 class="card-title"><%= @user.name%></h1>
+        <p class="card-text"><%= @user.self_introduction %></p>
+      </div>
+    </section>
+    <% if current_user.id == @user.id %>
+      <div class='userAction'>
+        <div class="userAction_edit userAction_common">
+          <%= link_to(content_tag(:i, "", class: 'fas fa-edit fa-2x'), edit_user_registration_path) %>
+          <span>情報を編集</span>
+        </div>
+        <div class='userAction_logout userAction_common'>
+          <%= link_to(content_tag(:i, "", class: 'fas fa-cog fa-2x'), destroy_user_session_path, method: :delete) %>
+          <span>ログアウト</span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
