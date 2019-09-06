@@ -1,7 +1,5 @@
 class User < ApplicationRecord
 
-  has_many :chat_messages
-  has_many :chat_room_users
   has_many :group_users
   has_many :groups, through: :group_users
   has_many :messages
