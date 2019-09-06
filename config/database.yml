@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: kei-match_production
-  username: kei-match
-  password: <%= ENV['KEI-MATCH_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
