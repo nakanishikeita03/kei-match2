@@ -10,9 +10,9 @@
 #   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
 #
 default: &default
-  database: kei-match_production	  adapter: postgresql
-  username: kei-match	  encoding: unicode
-  password: <%= ENV['KEI-MATCH_DATABASE_PASSWORD'] %>
+  adapter: mysql2	  database: kei-match_production	  adapter: postgresql
+  encoding: utf8	  username: kei-match	  encoding: unicode
+  pool: 5
   username: root
   password:
   socket: /tmp/mysql.sock
@@ -20,6 +20,7 @@ default: &default
 development:
   <<: *default
   database: kei-match_development
+  
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -49,6 +50,9 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  database: kei-match_production	  adapter: postgresql
+  username: kei-match	  encoding: unicode
+  password: <%= ENV['KEI-MATCH_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
