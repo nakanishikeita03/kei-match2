@@ -10,9 +10,9 @@
 #   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
+  database: kei-match_production	  adapter: postgresql
+  username: kei-match	  encoding: unicode
+  password: <%= ENV['KEI-MATCH_DATABASE_PASSWORD'] %>
   username: root
   password:
   socket: /tmp/mysql.sock
