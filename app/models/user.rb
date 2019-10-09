@@ -9,7 +9,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  mount_uploader :img_name, ImgNameUploader
+  mount_uploader :img_name, ImageUploader
   enum sex: { 男: 0, 女: 1 }
   enum hobby: { 読書: 0, 映画: 1, 旅行: 2, アウトドア: 3, お酒: 4 }
   validates :img_name, presence: true
