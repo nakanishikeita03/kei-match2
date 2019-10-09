@@ -259,7 +259,6 @@ DEPENDENCIES
   rails (~> 5.0.7, >= 5.0.7.2)
   rails-ujs
   sass-rails (~> 5.0)
-  sassc
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
