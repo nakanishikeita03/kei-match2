@@ -262,7 +262,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv
   capistrano3-unicorn
-  carrierwave (~> 1.0)
+  carrierwave
   coffee-rails (~> 4.2)
   devise
   fog-aws
