@@ -1,11 +1,8 @@
 # Load DSL and set up stages
-# 戻す
-# require "capistrano/setup"
+require "capistrano/setup"
 
 # Include default deployment tasks
-
-# 戻す
-# require "capistrano/deploy"
+require "capistrano/deploy"
 
 # Load the SCM plugin appropriate to your project:
 #
@@ -15,10 +12,8 @@
 # require "capistrano/scm/svn"
 # install_plugin Capistrano::SCM::Svn
 # or
-
-# もどす
-# require "capistrano/scm/git"
-# install_plugin Capistrano::SCM::Git
+require "capistrano/scm/git"
+install_plugin Capistrano::SCM::Git
 
 # Include tasks from other gems included in your Gemfile
 #
@@ -38,18 +33,14 @@
 # require "capistrano/rails/assets"
 # require "capistrano/rails/migrations"
 # require "capistrano/passenger"
-
-# もどす
-# require "capistrano/setup"
-# require "capistrano/deploy"
-# require 'capistrano/rbenv'
-# require 'capistrano/bundler'
-# require 'capistrano/rails/assets'
-# require 'capistrano/rails/migrations'
-# require 'capistrano3/unicorn'
+require "capistrano/setup"
+require "capistrano/deploy"
+require 'capistrano/rbenv'
+require 'capistrano/bundler'
+require 'capistrano/rails/assets'
+require 'capistrano/rails/migrations'
+require 'capistrano3/unicorn'
 
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
-
-# もどす
-# Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
+Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
