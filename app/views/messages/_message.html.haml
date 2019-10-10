@@ -1,0 +1,13 @@
+.message
+  .left-message
+    .left-message__img
+      = image_tag message.user.img_name.url(:thumb)
+  .right-message
+    .upper-message
+      .upper-message__name
+        = message.user.name
+      .upper-message__date
+        = message.created_at.strftime("%m/%d %H:%M")
+    .lower-message
+      %p.lower-message__contents
+        = message.content

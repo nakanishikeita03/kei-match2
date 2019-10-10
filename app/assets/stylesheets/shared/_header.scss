@@ -1,0 +1,100 @@
+.header{
+    height: 77px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    .header-container{
+      justify-content: space-between;
+      max-width: 1010px;
+      padding: 15px 20px;
+      width: 100%;
+      height: 77px;
+      display:flex;
+      margin: 0 auto;
+        .header-left{
+          width:33%;
+          display: flex;
+            .header-icon{
+              font-size:24px;
+              width:30px;
+              height:30px;
+              .fa-laptop{
+                display:block;
+                padding: auto;
+              }
+            }
+            .header-line{
+              background-color: #262626;
+              background-color: rgba(var(--i1d,38,38,38),1);
+              height: 28px;
+              margin: 0 16px;
+              -webkit-transition: opacity .1s ease-out;
+              transition: opacity .1s ease-out;
+              width: 1px;
+            }
+            .header-logo{
+              font-family: 'Turret Road', cursive;
+              font-size:22px;
+              padding-bottom:10px;
+              font-weight:bold;
+            }
+        }
+        .header-center{
+          width:33%;
+          .fuzzy_search{
+            width: 100%;
+            position: relative;
+            &__label{
+              display:inline;
+              &--icon{
+                position:absolute;
+                top: 10px;
+                right: 10px;
+              }
+              &--btn{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                opacity: 0;
+                cursor: pointer;
+              }
+            }
+            &__field{
+              display: block;
+              width: 50%;
+              height: 30px;
+              margin: 0 auto;
+              padding: 5px 5px 5px 10px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              background: #F5F5F5;
+              transition-duration: 0.3s;
+              &:focus {
+                outline: 0;
+              }
+              &::-webkit-search-cancel-button {
+                -webkit-appearance: none;
+              }
+            }
+          }
+        }
+        .header-right{
+          width:33%;
+            .header-link{
+              margin: 0 0 0 auto;
+              display:flex;
+              width:100px;
+              height:100px;
+
+                &__icon{
+                  margin-left: 30px;
+                  font-size:24px;
+                  width:30px;
+                  height:30px;
+
+                }
+            }
+        }
+    }
+}

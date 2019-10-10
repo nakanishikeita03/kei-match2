@@ -1,0 +1,20 @@
+.header
+  .header-container
+    .header-left
+      .header-icon
+        = fa_icon 'laptop'
+      .header-line
+      .header-logo
+        Go-En
+    .header-center
+      .fuzzy_search
+      = form_tag(root_path,method: :get) do
+        %label.fuzzy_search__label
+          = submit_tag 'search', :name => nil,class:"fuzzy_search__label--btn"
+        = text_field_tag :search, "",class:"fuzzy_search__field",placeholder:"検索"
+    .header-right
+      .header-link
+        .header-link__icon
+          = fa_icon 'heart'
+        .header-link__icon
+          = fa_icon 'user'

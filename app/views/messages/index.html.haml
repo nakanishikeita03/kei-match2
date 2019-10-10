@@ -1,0 +1,12 @@
+%body
+  .chatPage
+    %header.header
+      %i.fas.fa-comments.fa-3x
+      .header_logo= link_to image_tag("match1.png"), "/groups/new"
+    .container
+      .messagesArea.messages
+        = render @messages
+      .form
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form__message', id: 'new_message', placeholder: 'type a message'
+          = f.submit 'Send', class: 'form__submit'
