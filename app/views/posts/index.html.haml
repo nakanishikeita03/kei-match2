@@ -1,0 +1,9 @@
+= render 'shared/post-btn'
+= render 'shared/header'
+%body
+  .postIndex
+    .postIndex-container
+      .postIndex-left
+      .postIndex-right
+        .post-contents
+          = render partial: 'post', collection: @posts

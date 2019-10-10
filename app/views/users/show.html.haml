@@ -12,8 +12,8 @@
       - if current_user.id == @user.id
         .userAction
           .userAction_edit.userAction_common
-            = link_to(content_tag(:i, "", class: 'fas fa-angry fa-2x'), edit_user_registration_path)
+            = link_to(content_tag(:i, "", class: 'fa fa-undo'), edit_user_registration_path)
             %span 情報を編集
           .userAction_logout.userAction_common
-            = link_to(content_tag(:i, "", class: 'fas fa-cog fa-2x'), destroy_user_session_path, method: :delete)
+            = link_to(content_tag(:i, "", class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete)
             %span ログアウト

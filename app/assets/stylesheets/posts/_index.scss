@@ -1,0 +1,24 @@
+.postIndex{
+    background-color: #F5F5F5;
+    margin-top:77px;
+    height:750px;
+    padding-top: 60px;
+      .postIndex-container{
+        max-width: 935px;
+        margin: 0 auto;
+        display:flex;
+        .postIndex-left{
+          max-width: 293px;
+          width: 100%;
+          height:300px;
+          background-color:red;
+          margin-right:40px;
+        }
+        .postIndex-right{
+          max-width: 614px;
+          width: 100%;
+          height:300px;
+          background-color:#fff;
+        }
+      }
+}
