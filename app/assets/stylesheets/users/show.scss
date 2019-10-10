@@ -1,24 +1,10 @@
 .usershowPage {
-  .header {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 10px;
-    color: #dccbcb;
-    border-bottom: 1px solid #e8e8e8;
-    &_logo {
-      padding-right: 30px;
-      & > a {
-        width: 40px;
-        display: block;
-        & > img {
-          width: 150%;
-        }
-      }
-    }
-  }
+  background-color: #F5F5F5;
+  margin-top:77px;
+  height:750px;
   .userInfo {
-    margin-top: 20px;
     &_img {
+      padding-top:30px;
       width: 300px;
       height: 300px;
       margin: 0 auto;
@@ -58,7 +44,9 @@
     display: flex;
     justify-content: space-between;
     width: 300px;
-    margin: 30px auto ;
+    margin-top: 30px;
+    margin-left:auto;
+    margin-right:auto;
     color:#c3c7d0;
     &_common {
       & > a {
@@ -74,7 +62,7 @@
         box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
         transition: color .5s;
         &:hover {
-          color:#77EEFF;
+          color:#66CC33;
         }
       }
     }

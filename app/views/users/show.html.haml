@@ -1,0 +1,19 @@
+= render 'shared/post-btn'
+= render 'shared/header'
+%body
+  .usershowPage
+    .userInfo
+      .userInfo_img
+        = image_tag @user.img_name.url(:thumb)
+      %section.card
+        .card-content
+          %h1.card-title= @user.name
+          %p.card-text= @user.self_introduction
+      - if current_user.id == @user.id
+        .userAction
+          .userAction_edit.userAction_common
+            = link_to(content_tag(:i, "", class: 'fas fa-angry fa-2x'), edit_user_registration_path)
+            %span 情報を編集
+          .userAction_logout.userAction_common
+            = link_to(content_tag(:i, "", class: 'fas fa-cog fa-2x'), destroy_user_session_path, method: :delete)
+            %span ログアウト
