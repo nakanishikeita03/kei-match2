@@ -14,3 +14,11 @@
 @import "shared/simple-header";
 @import "posts/index";
 @import "posts/new";
+
+a{
+  text-decoration: none;
+  color: #000;
+  &:hover {
+    color:#66CC33;
+  }
+}
