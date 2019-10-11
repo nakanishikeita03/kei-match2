@@ -14,30 +14,32 @@
       margin: 0 auto;
         .header-left{
           width:33%;
-          display: flex;
-            .header-icon{
-              font-size:24px;
-              width:30px;
-              height:30px;
-              .fa-laptop{
-                display:block;
-                padding: auto;
+            a{
+              display: flex;
+              .header-icon{
+                font-size:24px;
+                width:30px;
+                height:30px;
+                .fa-laptop{
+                  display:block;
+                  padding: auto;
+                }
               }
-            }
-            .header-line{
-              background-color: #262626;
-              background-color: rgba(var(--i1d,38,38,38),1);
-              height: 28px;
-              margin: 0 16px;
-              -webkit-transition: opacity .1s ease-out;
-              transition: opacity .1s ease-out;
-              width: 1px;
-            }
-            .header-logo{
-              font-family: 'Turret Road', cursive;
-              font-size:22px;
-              padding-bottom:10px;
-              font-weight:bold;
+              .header-line{
+                background-color: #262626;
+                background-color: rgba(var(--i1d,38,38,38),1);
+                height: 28px;
+                margin: 0 16px;
+                -webkit-transition: opacity .1s ease-out;
+                transition: opacity .1s ease-out;
+                width: 1px;
+              }
+              .header-logo{
+                font-family: 'Turret Road', cursive;
+                font-size:22px;
+                padding-bottom:10px;
+                font-weight:bold;
+              }
             }
         }
         .header-center{

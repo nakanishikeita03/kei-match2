@@ -1,8 +1,9 @@
 .simpleheader
   .simpleheader-container
     .simpleheader-center
-      .simpleheader-icon
-        = fa_icon 'laptop'
-      .simpleheader-line
-      .simpleheader-logo
-        Go-En
+      = link_to posts_path do
+        .simpleheader-icon
+          = fa_icon 'laptop'
+        .simpleheader-line
+        .simpleheader-logo
+          Go-En
