@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    # binding.pry
+    binding.pry
     @post = Post.new(post_params)
     if @post.save
       # binding.pry
