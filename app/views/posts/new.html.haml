@@ -1,32 +1,25 @@
 = render 'shared/simple-header'
-.product-exhibit
-  .product-exhibit-main
+.postNew
+  .postNew-container
     %h2
-      今日のテーマに沿ったつぶやきをしてね
+      今日の勉強時間
     = form_for @post do |f|
       = f.fields_for :task do |task|
-        .form-group
-          %label
-            配送料の負担
-            %span
-              必須
-          %div
-            .select-wrap
-              %i.fa.fa-angle-down
-              -# = task.text_field :time, placeholder: '携帯電話の番号を入力'
+        .study-form
+          .study-form-input
+            .form-group
+              .taskNew-title
+                言語
               = task.select :language, Task.languages.keys,{prompt: '---'}
-        .form-group
-          %label
-            配送料の負担
-            %span
-              必須
-          %div
-            .select-wrap
-              %i.fa.fa-angle-down
-              -# = task.text_field :language, placeholder: '携帯電話の番号を入力'
+            .form-group
+              .taskNew-title
+                勉強時間
               = task.select :time, Task.times.keys,{prompt: '---'}
+          #input_box
+          %p#add_item_button 追加する
       .form-group
-        = f.text_area :text, class: "items-new-form-area__default", rows: "5"
-        = f.submit "出品する", class:"button",id:"product_botton"
+        = f.text_area :text, class: "posts-new-text", rows: "5"
+      .form-group.btn-box
+        = f.submit "投稿", class:"button",id:"post_botton"
         =link_to "戻る", root_path,class:"back-btn"
        
