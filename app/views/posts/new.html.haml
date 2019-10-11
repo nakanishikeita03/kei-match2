@@ -1,0 +1,32 @@
+= render 'shared/simple-header'
+.product-exhibit
+  .product-exhibit-main
+    %h2
+      今日のテーマに沿ったつぶやきをしてね
+    = form_for @post do |f|
+      = f.fields_for :task do |task|
+        .form-group
+          %label
+            配送料の負担
+            %span
+              必須
+          %div
+            .select-wrap
+              %i.fa.fa-angle-down
+              -# = task.text_field :time, placeholder: '携帯電話の番号を入力'
+              = task.select :language, Task.languages.keys,{prompt: '---'}
+        .form-group
+          %label
+            配送料の負担
+            %span
+              必須
+          %div
+            .select-wrap
+              %i.fa.fa-angle-down
+              -# = task.text_field :language, placeholder: '携帯電話の番号を入力'
+              = task.select :time, Task.times.keys,{prompt: '---'}
+      .form-group
+        = f.text_area :text, class: "items-new-form-area__default", rows: "5"
+        = f.submit "出品する", class:"button",id:"product_botton"
+        =link_to "戻る", root_path,class:"back-btn"
+       

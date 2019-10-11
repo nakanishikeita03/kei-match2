@@ -69,6 +69,7 @@ gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-byebug'
+gem 'pry-rails'
 gem 'kaminari'
 gem 'rails-ujs'
 gem 'fog-aws'

@@ -1,0 +1,40 @@
+.simpleheader{
+  height: 77px;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  .simpleheader-container{
+    padding: 15px 20px;
+    height: 77px;
+    margin: 0 auto;
+    text-align: center;
+      .simpleheader-center{
+        display: flex;
+        justify-content: center;
+          .simpleheader-icon{
+            font-size:24px;
+            width:30px;
+            height:30px;
+            .fa-laptop{
+              display:block;
+              padding: auto;
+            }
+          }
+          .simpleheader-line{
+            background-color: #262626;
+            background-color: rgba(var(--i1d,38,38,38),1);
+            height: 28px;
+            margin: 0 16px;
+            -webkit-transition: opacity .1s ease-out;
+            transition: opacity .1s ease-out;
+            width: 1px;
+          }
+          .simpleheader-logo{
+            font-family: 'Turret Road', cursive;
+            font-size:22px;
+            padding-bottom:10px;
+            font-weight:bold;
+          }
+      }
+  }
+}
