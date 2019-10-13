@@ -1,18 +1,17 @@
 class PostsController < ApplicationController
   def index
+    @posts = Post.all
   end
 
   def new
-    # binding.pry
     @post = Post.new
-    @post.task.build
+    @post.tasks.build
+    render "new"
   end
 
   def create
-    binding.pry
     @post = Post.new(post_params)
     if @post.save
-      # binding.pry
       redirect_to controller: :posts, action: :index
     else
       # render "new"
@@ -20,15 +19,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @chart = Task.where(post_id: params[:id]).pluck("language","time")
+  end
+
 
 
   private
 
   def post_params
-    params.require(:post).permit(:text,task_attributes: [:time,:language]).merge(user_id: current_user.id)
+    params.require(:post).permit(:text,tasks_attributes: [:time,:language]).merge(user_id: current_user.id)
   end
 
   def task_params
-    params.require(:post).permit(:task_attributes).merge(post_id: 1)
+    params.require(:post).permit(:tasks_attributes).merge(post_id: 1)
   end
 end

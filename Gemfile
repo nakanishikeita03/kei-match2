@@ -75,3 +75,5 @@ gem 'rails-ujs'
 gem 'fog-aws'
 gem 'haml-rails'
 gem 'erb2haml'
+gem "chartkick"
+gem 'chartable'
