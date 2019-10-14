@@ -1,1 +1,33 @@
-= pie_chart @chart
+= render 'shared/post-btn'
+= render 'shared/header'
+%body
+  .postIndex
+    .postIndex-container
+      .postShow-left.postIndex-left
+        .postShow-user
+          .postShow-user__img
+            = image_tag(@post.user.img_name.url(:thumb), width: '50', height: '40')
+          .postShow-user__name
+            = @post.user.name
+        .postShow-follow
+          フォローする
+      .postIndex-right
+        .post-contents
+          .post-contents-container
+            .post-chart
+              .post-chart-title
+                %span.font-weight-bold
+                  = "#{@post.user.name}"
+                さんの
+                %span.font-weight-bold
+                  = "#{@post.created_at.strftime("%m/%d")}"
+                の学習時間
+              .post-chart-time
+                ="#{@time_sum}時間"
+              .post-chart-chart
+                = pie_chart @chart
+            .post-text
+              = @post.text
+            .post-content-time
+              = @post.created_at.strftime("%Y-%m-%d %H:%M")
+            
