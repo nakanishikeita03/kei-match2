@@ -22,6 +22,14 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @chart = Task.where(post_id: params[:id]).pluck("language","time")
+    #合計の勉強
+    @posttimes = Task.where(post_id: params[:id])
+    times =[]
+    @posttimes.each do |posttime|
+      time = posttime.time_before_type_cast
+      times << time
+    end
+    @time_sum = times.sum
   end
 
 
