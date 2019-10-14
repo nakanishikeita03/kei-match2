@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @user = User.find(@post.user_id)
     @chart = Task.where(post_id: params[:id]).pluck("language","time")
     #合計の勉強
     @posttimes = Task.where(post_id: params[:id])
@@ -30,6 +31,7 @@ class PostsController < ApplicationController
       times << time
     end
     @time_sum = times.sum
+
   end
 
 
@@ -43,4 +45,5 @@ class PostsController < ApplicationController
   def task_params
     params.require(:post).permit(:tasks_attributes).merge(post_id: 1)
   end
+  
 end

@@ -1,27 +1,5 @@
 .matchingPage {
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    color: #dccbcb;
-    border-bottom: 1px solid #e8e8e8;
-    .light-blue{
-      color:#77EEFF;
-    }
-    &_logo {
-      position: absolute;
-      left: 30px;
-      & > a {
-        width: 40px;
-        display: block;
-        & > img {
-          width: 100%;
-        }
-      }
-    }
-  }
- 
+  margin-top:77px;
   .matchingNum {
     text-align: center;
     font-size: 12px;
