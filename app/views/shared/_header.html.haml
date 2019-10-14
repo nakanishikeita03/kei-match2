@@ -15,6 +15,8 @@
     .header-right
       .header-link
         .header-link__icon
-          = fa_icon 'heart'
+          = link_to new_group_path do
+            = fa_icon 'heart'
         .header-link__icon
-          = fa_icon 'user'
+          = link_to new_user_session_path do
+            = fa_icon 'user'
