@@ -1,7 +1,9 @@
-.post-content
-  = link_to post_path(post.id) do
-    = post.text
-    - post.tasks.each do |task|
-      = task.time
-      = task.language
-      = pie_chart @chart
+= link_to post_path(post.id) do
+  .post-content.card
+    .post-content-user
+      .post-content-user__img
+        = image_tag(post.user.img_name.url(:thumb), width: '50', height: '40')
+      .post-content-user__name
+        = post.user.name
+    %p.post-content-text.card-text
+      = post.text
