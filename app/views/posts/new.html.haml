@@ -1,0 +1,25 @@
+= render 'shared/simple-header'
+.postNew
+  .postNew-container
+    %h2
+      今日の勉強時間
+    = form_for @post do |f|
+      = f.fields_for :tasks do |task|
+        .study-form
+          .study-form-input
+            .form-group
+              .taskNew-title
+                言語
+              = task.select :language, Task.languages.keys,{prompt: '---'}
+            .form-group
+              .taskNew-title
+                勉強時間
+              = task.select :time, Task.times.keys,{prompt: '---'}
+          #input_box
+          %p#add_item_button 追加する
+      .form-group
+        = f.text_area :text, class: "posts-new-text", rows: "5"
+      .form-group.btn-box
+        = f.submit "投稿", class:"button",id:"post_botton"
+        =link_to "戻る", root_path,class:"back-btn"
+       

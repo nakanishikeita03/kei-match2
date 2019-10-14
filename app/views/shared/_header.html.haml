@@ -1,11 +1,12 @@
 .header
   .header-container
     .header-left
-      .header-icon
-        = fa_icon 'laptop'
-      .header-line
-      .header-logo
-        Go-En
+      = link_to posts_path do
+        .header-icon
+          = fa_icon 'laptop'
+        .header-line
+        .header-logo
+          Go-En
     .header-center
       .fuzzy_search
       = form_tag(root_path,method: :get) do
