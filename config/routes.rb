@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "top#index"
   resources :users, only: [:show]
   resources :posts
+  resources :relationships, only: [:create, :destroy]
   resources :groups, only: [:new, :create, :edit, :update] do
     resources :messages, only: [:create, :index]
   end

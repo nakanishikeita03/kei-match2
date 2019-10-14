@@ -17,3 +17,6 @@
           .userAction_logout.userAction_common
             = link_to(content_tag(:i, "", class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete)
             %span ログアウト
+      - else
+        .userAction.userAction-follow
+          = render 'relationships/follow_button', user: @user 

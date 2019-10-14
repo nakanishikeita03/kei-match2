@@ -6,11 +6,11 @@
       .postShow-left.postIndex-left
         .postShow-user
           .postShow-user__img
-            = image_tag(@post.user.img_name.url(:thumb), width: '50', height: '40')
+            = link_to image_tag(@user.img_name.url(:thumb), width: '50', height: '40'), "/users/#{@user.id}"
           .postShow-user__name
             = @post.user.name
         .postShow-follow
-          フォローする
+          = render 'relationships/follow_button', user: @user 
       .postIndex-right
         .post-contents
           .post-contents-container
