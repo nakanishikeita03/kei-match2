@@ -1,8 +1,7 @@
 .postIndex{
     background-color: #F5F5F5;
     margin-top:77px;
-    height:750px;
-    padding-top: 60px;
+    padding: 60px 0;
       .postIndex-container{
         max-width: 935px;
         margin: 0 auto;
@@ -17,10 +16,17 @@
           max-width: 614px;
           width: 100%;
           background-color:#fff;
+          
             .post-contents{
+              text-decoration: none;
+              .Indexlink{
+                &:hover{
+                  text-decoration: none;
+                }
               .post-content{
                 padding: 20px;
                 width:100%;
+                text-decoration: none;
                 .post-content-user{
                   padding: 10px;
                   display:flex;
@@ -45,7 +51,8 @@
                   font-size: 14px;
                 }
               }
-            }
+              }
+        }
         }
       }
 }
