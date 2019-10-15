@@ -1,9 +1,15 @@
-.matchingPage {
+.groupNew {
   margin-top:77px;
+  background-color:#F5F5F5;
+  height:calc(100vh - 77px);
+  .group-container{
+    max-width: 935px;
+    margin: 0 auto;
+    padding: 40px 20px;
   .matchingNum {
     text-align: center;
     font-size: 12px;
-    color: #77EEFF;
+    color: #66CC33;
     margin-bottom: 20px;
   }
   .pageTitle {
@@ -11,7 +17,7 @@
     font-size: 20px;
     text-align: center;
   }
-  .matchingList {
+  .groupList {
     margin-top: 30px;
     text-align: center;
     .matchingPerson {
@@ -38,7 +44,7 @@
         .chatForm_btn {
           border: none;
           padding: 10px;
-          background: #77EEFF;
+          background: #66CC33;
           color: #fff;
           border-radius: 6px;
           cursor: pointer;
@@ -50,12 +56,13 @@
       }
     }
   }
+  }
   .pagenation{
   color: #e8e8e8;
   margin: 20px auto 0;
   text-align: center;
     a{
-      color: #77EEFF;
+      color: #66CC33;
     }
    }
   
