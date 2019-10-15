@@ -1,7 +1,13 @@
 class GroupsController < ApplicationController
   def new
-    @users = User.where.not(id: current_user.id).page(params[:page]).per(10)
-
+    # @users = User.where.not(id: current_user.id).page(params[:page]).per(10)
+    # binding.pry
+    @followingrelationship = Relationship.where(user_id:current_user.id).select('follow_id')
+    @followingusers = User.where(id:@followingrelationship) 
+    @followerrelationship = Relationship.where(follow_id:current_user.id).select('user_id')
+    @followerusers = User.where(id:@followerrelationship) 
+    @matchingusers = @followingusers & @followerusers
+    @users = Kaminari.paginate_array(@matchingusers).page(params[:page]).per(10)
   end
   def create
     @current_user_group_id = GroupUser.where(user_id: current_user.id).pluck('group_id')

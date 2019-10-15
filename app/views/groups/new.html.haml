@@ -1,16 +1,14 @@
 = render 'shared/header'
 %body
-  .matchingPage
-    .container
-      .mt-5
-        %h2.pageTitle 同じ趣味の人一覧
-        .matchingList
-          - @users.each do |user|
-            - if current_user.sex != user.sex && current_user.hobby == user.hobby
-              .matchingPerson
-                .matchingPerson_img= link_to image_tag(user.img_name.url(:thumb), width: '50', height: '40'), "/users/#{user.id}"
-                .matchingPerson_name= user.name
-                = form_tag('/groups', method: :post) do
-                  %input{:name => "user_id", :type => "hidden", :value => "#{user.id}"}/
-                  = submit_tag 'チャットを開く', class: "chatForm_btn"
+  .groupNew
+    .group-container
+      %h2.pageTitle 相互フォローワー
+      .groupList
+        - @matchingusers.each do |user|
+          .matchingPerson
+            .matchingPerson_img= link_to image_tag(user.img_name.url(:thumb), width: '50', height: '40'), "/users/#{user.id}"
+            .matchingPerson_name= user.name
+            = form_tag('/groups', method: :post) do
+              %input{:name => "user_id", :type => "hidden", :value => "#{user.id}"}/
+              = submit_tag 'チャットを開く', class: "chatForm_btn"
         .pagenation= paginate(@users)
