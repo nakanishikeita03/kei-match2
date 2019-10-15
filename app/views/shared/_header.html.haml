@@ -14,10 +14,17 @@
           = submit_tag 'search', :name => nil,class:"fuzzy_search__label--btn"
         = text_field_tag :search, "",class:"fuzzy_search__field",placeholder:"検索"
     .header-right
-      .header-link
-        .header-link__icon
-          = link_to new_group_path do
-            = fa_icon 'heart'
-        .header-link__icon
-          = link_to new_user_session_path do
-            = fa_icon 'user'
+      - if signed_in?
+        .header-link
+          .header-link__icon
+            = link_to new_group_path do
+              = fa_icon 'heart'
+          .header-link__icon
+            = link_to new_user_session_path do
+              = fa_icon 'user'
+      - else
+        %ul.signin-btns
+          %li
+            = link_to "会員登録", new_user_registration_path, class: "btn registration"
+          %li
+            = link_to "ログイン", new_user_session_path, class: "btn login"

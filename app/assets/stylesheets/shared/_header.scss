@@ -88,7 +88,6 @@
               display:flex;
               width:100px;
               height:100px;
-
                 &__icon{
                   margin-left: 30px;
                   font-size:24px;
@@ -96,7 +95,38 @@
                   height:30px;
 
                 }
-            }
+              }
+                .signin-btns{
+                  list-style: none;
+                  display: flex;
+                  margin: 0 0 0 auto;
+                  width:200px;
+                    .btn {
+                      border-radius: 5px;
+                      margin: 0 10px;
+                    }
+                    
+                    .registration {
+                      border: 1px solid #66CC33;
+                      background: #66CC33;
+                      color: #fff;
+                      opacity: 0.9;
+                      transition-duration: 0.3s;
+                      &:hover {
+                        opacity: 1;
+                      }
+                    }
+                    
+                    .login {
+                      border: 1px solid #808080;
+                      color: #808080;
+                      transition-duration: 0.3s;
+                      &:hover {
+                        background: #808080;
+                        color: #fff;
+                      }
+                    }
+                  }
         }
     }
 }
