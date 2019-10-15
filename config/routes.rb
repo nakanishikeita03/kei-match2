@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "top#index"
+  root "posts#index"
   resources :users, only: [:show]
   resources :posts
   resources :relationships, only: [:create, :destroy]

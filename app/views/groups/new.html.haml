@@ -2,7 +2,10 @@
 %body
   .groupNew
     .group-container
-      %h2.pageTitle 相互フォローワー
+      %h2.pageTitle 相互フォロワー
+      .group-number
+        = "#{@matchingusers.length}"
+        人
       .groupList
         - @matchingusers.each do |user|
           .matchingPerson
