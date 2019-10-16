@@ -1,6 +1,6 @@
 = link_to post_path(post.id),class:"Indexlink" do
-  .post-content.card
-    .post-content-user
+  .post-content.card.p-4
+    .post-content-user.d-flex.p-2
       .post-content-user__img
         = image_tag(post.user.img_name.url(:thumb), width: '50', height: '40')
       .post-content-user__name

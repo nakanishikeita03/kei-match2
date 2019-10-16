@@ -1,14 +1,14 @@
 = render 'shared/header'
 %body
   .groupNew
-    .group-container
-      %h2.pageTitle 相互フォロワー
-      .group-number
+    .group-container.mx-auto.p-4
+      %h2.pageTitle.mt-4.text-center 相互フォロワー
+      .group-number.text-center.mb-4
         = "#{@matchingusers.length}"
         人
-      .groupList
+      .groupList.mt-4
         - @matchingusers.each do |user|
-          .matchingPerson
+          .matchingPerson.d-flex.text-center
             .matchingPerson_img= link_to image_tag(user.img_name.url(:thumb), width: '50', height: '40'), "/users/#{user.id}"
             .matchingPerson_name= user.name
             = form_tag('/groups', method: :post) do

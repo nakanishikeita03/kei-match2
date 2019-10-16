@@ -1,23 +1,30 @@
 .postIndex{
     background-color: #F5F5F5;
-    margin-top:77px;
+    margin-top:60px;
     padding: 60px 0;
       .postIndex-container{
         max-width: 935px;
-        margin: 0 auto;
-        display:flex;
+        display: flex;
+        @media (max-width:767px) {
+          display: block;
+        }
         .postIndex-left{
           max-width: 293px;
           width: 100%;
           background-color:#fff;
           margin-right:40px;
           height:100px;
+          @media (max-width:767px) {
+            margin:0 auto 20px;
+            margin-bottom:20px;
+          }
         }
         .postIndex-right{
-          max-width: 614px;
-          width: 100%;
+          width: 614px;
           background-color:#fff;
-          
+          @media (max-width:767px) {
+            margin:0 auto;
+          }
             .post-contents{
               text-decoration: none;
               .Indexlink{
@@ -25,12 +32,8 @@
                   text-decoration: none;
                 }
               .post-content{
-                padding: 20px;
-                width:100%;
                 text-decoration: none;
                 .post-content-user{
-                  padding: 10px;
-                  display:flex;
                   align-items: center;
                   border-bottom: 1px solid #333;
                     &__img{
@@ -46,10 +49,18 @@
                   color: #777;
                   font-size: 18px;
                   line-height: 1.5;
+                  @media (max-width:767px) {
+                    padding: 20px 0;
+                    font-size: 14px;
+                    margin-bottom: 0;
+                  }
                 }
                 .post-content-time{
                   color: #777;
                   font-size: 14px;
+                  @media (max-width:767px) {
+                    font-size: 12px;
+                  }
                 }
               }
               }

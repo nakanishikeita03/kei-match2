@@ -1,10 +1,10 @@
 = render 'shared/header'
 %body
   .chatPage
-    .chat-container
+    .chat-container.mx-auto.py-3.px-2
       .messagesArea.messages
         = render @messages
       .form
         = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'form__message', id: 'new_message', placeholder: 'type a message'
+          = f.text_field :content, class: 'form__message ', id: 'new_message', placeholder: 'type a message'
           = f.submit 'Send', class: 'form__submit'

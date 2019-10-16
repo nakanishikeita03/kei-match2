@@ -1,9 +1,9 @@
 .header
-  .header-container
+  .header-container.d-flex.justify-content-between.mx-auto.p-3
     .header-left
-      = link_to posts_path do
+      = link_to(posts_path, class: "d-flex") do
         .header-icon
-          = fa_icon 'laptop'
+          = fa_icon 'laptop '
         .header-line
         .header-logo
           Go-En
