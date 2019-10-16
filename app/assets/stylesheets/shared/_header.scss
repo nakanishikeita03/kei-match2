@@ -8,6 +8,9 @@
       max-height:50px;
         .header-left{
           width:33%;
+          @media (max-width:767px) {
+            width:40%;
+          }
               .header-icon{
                 font-size:24px;
                 width:30px;
@@ -32,15 +35,20 @@
                 padding-bottom:10px;
                 font-weight:bold;
                 @media (max-width:767px) {
-                  font-size:20px;
+                  font-size:16px;
                 }
               }
         }
         .header-center{
           width:33%;
+          @media (max-width:767px) {
+            width: 0;
+            height: 0;
+          }
           .fuzzy_search{
             width: 100%;
             position: relative;
+
             &__label{
               display:inline;
               &--icon{
@@ -66,6 +74,12 @@
               border-radius: 5px;
               background: #F5F5F5;
               transition-duration: 0.3s;
+              @media (max-width:767px) {
+                width: 0;
+                height: 0;
+                background: #fff;
+                border: none;
+              }
               &:focus {
                 outline: 0;
               }
@@ -77,6 +91,9 @@
         }
         .header-right{
           width:33%;
+          @media (max-width:767px) {
+            width:60%;
+          }
             .header-link{
               margin: 0 0 0 auto;
               display:flex;
@@ -95,14 +112,12 @@
                   display: flex;
                   margin: 0 0 0 auto;
                   width:200px;
-                  @media (max-width:767px) {
-                    width: 100%;
-                  }
                     .btn {
                       border-radius: 5px;
                       margin: 0 10px;
                       @media (max-width:767px) {
-                        font-size:12px;
+                        font-size:10px;
+                        margin: 0 0 0 2px;
                       }
                     }
                     
