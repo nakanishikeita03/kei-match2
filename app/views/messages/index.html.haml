@@ -1,9 +1,7 @@
+= render 'shared/header'
 %body
   .chatPage
-    %header.header
-      %i.fas.fa-comments.fa-3x
-      .header_logo= link_to image_tag("match1.png"), "/groups/new"
-    .container
+    .chat-container
       .messagesArea.messages
         = render @messages
       .form

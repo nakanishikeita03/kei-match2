@@ -8,7 +8,6 @@
 @import "users/show";
 @import "users/edit";
 @import "messages";
-@import "groups";
 @import "shared/post-btn";
 @import "shared/header";
 @import "shared/footer";
@@ -17,11 +16,6 @@
 @import "posts/new";
 @import "posts/show";
 @import "relationships/follow_button";
+@import "groups/new";
+@import "messages/index";
 
-a{
-  text-decoration: none;
-  color: #000;
-  &:hover {
-    color:#66CC33;
-  }
-}
