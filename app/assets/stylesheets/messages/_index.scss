@@ -1,19 +1,17 @@
 .chatPage{
   background-color:#F5F5F5;
-  margin-top:77px;
+  margin-top:60px;
     .chat-container{
       max-width: 935px;
-      margin: 0 auto;
-      padding: 40px 20px;
         .messagesArea {
           box-sizing: border-box;
           height: calc(100vh - 180px);
           overflow: scroll;
           flex-direction: column;
-          padding-top: 46px;
+          @media (max-width:767px) {
+            height: calc(200vh - 180px);
+            }
             .message {
-              margin: 20px 0;
-              display:flex;
               .left-message{
                 &__img{
                     margin-top:10px;
@@ -60,12 +58,20 @@
             padding: 20px 50px 20px 40px;
             border: solid 3px #dccbcb;
               border-radius: 10px;
+              @media (max-width:767px) {
+                height: 45px;
+                padding: 10px 30px 10px 20px;
+                }
             &__message {
               border: none;
               float: left;
               height: 50px;
               width: calc(100% - 150px);
               outline: 0;
+              @media (max-width:767px) {
+                height: 25px;
+                padding: 10px 30px 10px 20px;
+                }
             }
             &__submit {
               background-color: gray;
@@ -76,6 +82,9 @@
               height: 50px;
               margin-left: 15px;
               padding: 0 30px;
+              @media (max-width:767px) {
+                height: 25px;
+                }
             }
           }
     }
