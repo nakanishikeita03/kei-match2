@@ -95,9 +95,15 @@
                   display: flex;
                   margin: 0 0 0 auto;
                   width:200px;
+                  @media (max-width:767px) {
+                    width: 100%;
+                  }
                     .btn {
                       border-radius: 5px;
                       margin: 0 10px;
+                      @media (max-width:767px) {
+                        font-size:12px;
+                      }
                     }
                     
                     .registration {
