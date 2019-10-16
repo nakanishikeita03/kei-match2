@@ -1,36 +1,22 @@
 .userEditPage
-  .header アカウント編集
-  .container
+  .EditHeader アカウント編集
+  .container.mt-5
     = form_for current_user, url: registration_path(current_user) do |f|
+      %label.rounded-circle.userProfileImg{:for => "file_photo"}
+        .userProfileImg_description 画像の変更
+        %i.fas.fa-portrait.fa-3x
+      #userImgPreview.userImgPreview
+        %img#thumbnail.userImgPreview_content{:accept => "image/*", :src => ""}/
+        %p.userImgPreview_text 画像を変更済み
+        = f.file_field :img_name, id: "file_photo"
       .form-group
         = f.label '名前'
         = f.text_field :name, class: "form-control"
       .form-group
         = f.label '自己紹介'
-        = f.text_area :self_introduction, class: "form-control"
+        = f.text_area :self_introduction, class: "form-control", rows: "5"
       .form-group
-        性別:
-        \#{f.label '男'}
-        \#{f.radio_button :sex, :男}
-        \#{f.label '女'}
-        \#{f.radio_button :sex, :女}
-      .form-group
-        趣味:
-        \#{f.label '読書'}
-        \#{f.radio_button :hobby, :読書}
-        \#{f.label '映画'}
-        \#{f.radio_button :hobby, :映画}
-        \#{f.label '旅行'}
-        \#{f.radio_button :hobby, :旅行}
-        \#{f.label 'アウトドア'}
-        \#{f.radio_button :hobby, :アウトドア}
-        \#{f.label 'お酒'}
-        \#{f.radio_button :hobby, :お酒}
-      .form-group
-        画像:
-        \#{f.file_field :img_name}
-      .form-group
-        = f.label '更新するにはパスワードを入力してください'
+        = f.label 'パスワードを入力してください'
         = f.password_field :current_password, class: "form-control", autocomplete: "off"
       .text-center
         = f.submit '更新', class: "btn submitBtn"
