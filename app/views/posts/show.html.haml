@@ -9,8 +9,12 @@
             = link_to image_tag(@user.img_name.url(:thumb), width: '50', height: '40'), "/users/#{@user.id}"
           .postShow-user__name
             = @post.user.name
-        .postShow-follow
-          = render 'relationships/follow_button', user: @user 
+        - if user_signed_in?
+          .postShow-follow
+            = render 'relationships/follow_button', user: @user 
+        - else
+          .postShow-follow-notin
+            =link_to "フォローする", new_user_session_path
       .postIndex-right
         .post-contents
           .post-contents-container

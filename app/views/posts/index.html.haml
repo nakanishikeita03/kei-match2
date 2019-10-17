@@ -7,4 +7,5 @@
       .postIndex-right
         .post-contents
           = render partial: 'post', collection: @posts
+        .pagenation= paginate(@posts)
 = render 'shared/footer'
