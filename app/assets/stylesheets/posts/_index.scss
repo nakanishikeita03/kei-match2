@@ -69,12 +69,38 @@
         .pagenation{
           background-color:#f5f5f5;
           color: #ddd;
+        .pagination{
+          background-color:#f5f5f5;
+          color: #ddd;
           padding-top: 20px;
           text-align: center;
+          margin: 0 auto;
+          width: 50%;
+          nav{
+            text-align: center;
+            margin: 0 auto;
             a{
               color: #66CC33;
             }
           }
+          }
+          .pagination>li>a {          
+            border: none;
+            color: #696969; 
+            background: #F5F5F5;
+            opacity: 0.7;
+          }
+          
+          .pagination>.active>a {     
+            border-radius: 15px;
+            opacity: 1;
+          }
+          .pagination>li>a:hover {        
+            border-radius: 15px;
+            opacity: 1;
+            background: #66CC33;
+          }
         }
+      }
       }
 }
