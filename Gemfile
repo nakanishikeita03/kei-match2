@@ -77,3 +77,8 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem "chartkick"
 gem 'chartable'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'dotenv-rails'
