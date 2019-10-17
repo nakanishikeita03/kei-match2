@@ -1,6 +1,15 @@
 .signinPage
   .container
     .userIcon
+      .signup-index-facebook-box
+        = link_to user_facebook_omniauth_authorize_path do
+          Facebookで登録する
+          %i
+            = fa_icon "facebook-square"
+      .signup-index-google-box
+        = link_to user_google_oauth2_omniauth_authorize_path do
+          .main__conect__lists__google__btn
+            Googleで登録する
       %i.fas.fa-user.fa-3x
     %h2.title ログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
