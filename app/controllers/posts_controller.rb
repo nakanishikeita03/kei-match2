@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!,       only:[:new,:create]
+
   def index
-    @posts = Post.order("created_at DESC").limit(10)
+    @posts = Post.order("created_at DESC").page(params[:page]).per(5)
   end
 
   def new

@@ -9,6 +9,11 @@
   border-radius: 50%;
   background: #66CC33;
   text-align: center;
+  opacity: 0.8;
+  transition-duration: 0.3s;
+  &:hover {
+    opacity: 1;
+  }
   @media (max-width:767px) {
     width: 60px;
     height: 60px;
