@@ -1,8 +1,26 @@
+= render 'shared/simple-header'
 .signinPage
   .container
-    .userIcon
-      %i.fas.fa-user.fa-3x
     %h2.title ログイン
+    .snsIcons
+      .snsIcons-container.mt-4
+        .snsIcon.snsIcon-twitter
+          = link_to(user_twitter_omniauth_authorize_path, class: "d-flex text-decoration-none") do
+            = fa_icon 'twitter'
+        .snsIcon-text.snsIcon-text-twitter
+          twitterでログイン
+      .snsIcons-container.mt-4
+        .snsIcon.snsIcon-facebook
+          = link_to(user_facebook_omniauth_authorize_path, class: "d-flex text-decoration-none") do
+            = fa_icon 'facebook-square'
+        .snsIcon-text.snsIcon-text-facebook
+          facebookでログイン
+      .snsIcons-container.mt-4
+        .snsIcon.snsIcon-google
+          = link_to(user_google_oauth2_omniauth_authorize_path, class: "d-flex text-decoration-none") do
+            = fa_icon 'google'
+        .snsIcon-text.snsIcon-text-google
+          googleでログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .form-group
         = f.label :email
@@ -14,4 +32,6 @@
         = f.password_field :password, class: "form-control", autocomplete: "off", placeholder: "パスワードを入力してください"
       .form-group.text-center
         = f.submit "ログインする", class: "loginBtn"
-    = render "devise/shared/links"
+    .signupPage-links.text-center
+      = link_to "アカウントの作成はこちら",sign_up_path, class: "text-decoration-none signupPage-link"
+        

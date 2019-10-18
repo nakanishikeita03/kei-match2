@@ -1,47 +1,33 @@
-%body
-  .sinupPage
-    %header.header
-      %div アカウント作成
-    .container
-      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class:"mt-5" }) do |f|
-        = devise_error_messages!
-        %label.rounded-circle.userProfileImg{:for => "file_photo"}
-          .userProfileImg_description 画像のアップロード
-          %i.fas.fa-portrait.fa-3x
-        #userImgPreview.userImgPreview
-          %img#thumbnail.userImgPreview_content{:accept => "image/*", :src => ""}/
-          %p.userImgPreview_text 画像をアップロード済み
-          = f.file_field :img_name, id: "file_photo"
-        .form-group
-          %label 名前
-          = f.text_field :name, class: "form-control", placeholder: "名前を入力してください"
-        .form-group
-          %label Eメールアドレス
-          = f.email_field :email, class: "form-control", placeholder: "emailを入力してください" ,autocomplete: "email"
-        .form-group
-          %label パスワード
-          - if @minimum_password_length
-            %em (6文字以上)
-          %br/
-          = f.password_field :password, class: "form-control", placeholder:"パスワードを入力してください", autocomplete: "off"
-        .form-group
-          %label 確認用パスワード
-          = f.password_field :password_confirmation, class:"form-control", placeholder: "パスワードを再度入力してください", autocomplete: "off"
-        %div
-          %label{:for => "fname"} First Name
-          %input#fname.cool{:type => "text"}/
-        %div
-          %label{:for => "lname"} Last Name
-          %input#lname.cool{:type => "text"}/
-        %div
-          %label{:for => "email"} Some Long Copy Goes Here
-          %input#email.cool{:type => "text"}/
-        .form-group
-          %label 自己紹介文
-          = text_area :user, :self_introduction, maxlength: "500", rows: "10", class:"form-control"
-        .text-center
-          = f.submit "登録", class: "btn submitBtn"
-          = render "devise/shared/links"
+.userEditPage
+  .EditHeader アカウント作成
+  .container.mt-5
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class:"mt-5" }) do |f|
+      = devise_error_messages!
+      %label.rounded-circle.userProfileImg{:for => "file_photo"}
+        .userProfileImg_description 画像のアップロード
+        %i.fas.fa-portrait.fa-3x
+      #userImgPreview.userImgPreview
+        %img#thumbnail.userImgPreview_content{:accept => "image/*", :src => ""}/
+        %p.userImgPreview_text 画像をアップロード済み
+        = f.file_field :img_name, id: "file_photo"
+      .form-group
+        %label{:for => "name"}名前
+        = f.text_field :name, class: "form-control", id:"fname.cool"
+      .form-group
+        %label{:for => "email"} Eメールアドレス
+        = f.email_field :email, class: "form-control",id:"email.cool",autocomplete: "email"
+      .form-group
+        %label{:for => "password"} パスワード(6文字以上)
+        = f.password_field :password, class: "form-control", id:"password.cool", autocomplete: "off"
+      .form-group
+        %label{:for => "fname"} 確認用パスワード
+        = f.password_field :password_confirmation, class:"form-control", id:"password_confirmation.cool", autocomplete: "off"
+      .form-group
+        %label{:for => "fname"} 自己紹介文
+        = f.text_area :self_introduction, maxlength: "500", rows: "10", class:"form-control",id:"self_introduction.cool"
+      .text-center
+        = f.submit "登録", class: "btn submitBtn"
+
 -# .wrap
 -#   %h1 Rise
 -#   %h3 I built something similar as an engineer on Identity.com

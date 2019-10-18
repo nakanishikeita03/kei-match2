@@ -62,6 +62,28 @@
       display: none;
     }
   }
+  label {
+    font-size: 14px;
+    margin: 10px;
+    -webkit-transition: top .2s ease-in-out, 
+                        font-size .2s ease-in-out;
+    transition: top .2s ease-in-out, 
+                font-size .2s ease-in-out;
+  }
+  
+  .active {
+    position: relative;
+    top: 1px;
+    font-size: 20px;
+  }
+  
+  
+  input[type=text]:focus {
+    outline: none;
+  }
+  textarea:focus {
+    outline: none;
+  }
   .submitBtn {
     background: #66CC33;
     color: #fff;
@@ -73,4 +95,5 @@
       opacity: .6;
     }
   }
+  
 }

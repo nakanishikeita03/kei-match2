@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   resources :groups, only: [:new, :create, :edit, :update] do
     resources :messages, only: [:create, :index]
   end
+
+  get '/sign_up',to: 'sign_up#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
