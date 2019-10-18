@@ -8,6 +8,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     callback_for(:google)
   end
 
+  def twitter
+    callback_for(:twitter)
+  end
+
 
   def callback_for(provider)
     @omniauth = request.env['omniauth.auth']
@@ -18,8 +22,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
     else 
       @sns = info[:sns]
-      session[:provider] = @sns[:provider]
-      session[:uid] = @sns[:uid]
       render template: "devise/registrations/new" 
     end
   end
