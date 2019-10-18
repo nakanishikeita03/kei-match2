@@ -1,0 +1,29 @@
+= render 'shared/simple-header'
+.signinPage
+  .container
+    %h2.title 新規登録
+    .snsIcons.mt-md-5
+      .snsIcons-container.mt-4
+        .snsIcon.snsIcon-email
+          = link_to(new_user_registration_path, class: "d-flex text-decoration-none") do
+            = fa_icon 'envelope'
+        .snsIcon-text.snsIcon-text-email
+          emailで登録
+      .snsIcons-container.mt-4
+        .snsIcon.snsIcon-twitter
+          = link_to(user_twitter_omniauth_authorize_path, class: "d-flex text-decoration-none") do
+            = fa_icon 'twitter'
+        .snsIcon-text.snsIcon-text-twitter
+          twitterで登録
+      .snsIcons-container.mt-4
+        .snsIcon.snsIcon-facebook
+          = link_to(user_facebook_omniauth_authorize_path, class: "d-flex text-decoration-none") do
+            = fa_icon 'facebook-square'
+        .snsIcon-text.snsIcon-text-facebook
+          facebookで登録
+      .snsIcons-container.mt-4
+        .snsIcon.snsIcon-google
+          = link_to(user_google_oauth2_omniauth_authorize_path, class: "d-flex text-decoration-none") do
+            = fa_icon 'google'
+        .snsIcon-text.snsIcon-text-google
+          googleで登録

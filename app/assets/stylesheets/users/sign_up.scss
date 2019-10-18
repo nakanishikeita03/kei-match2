@@ -1,4 +1,4 @@
-$main-color: #77EEFF;
+$main-color: #66CC33;
 $main-text-color: #fff;
 
 body {
@@ -22,7 +22,7 @@ body {
     margin: 0 auto 10px auto;
     width: 100px;
     height: 100px;
-    background: #77EEFF	;
+    background: $main-color;
     display: flex;
     cursor: pointer;
     align-items: center;
@@ -80,67 +80,6 @@ body {
       opacity: .6;
     }
   }
+  
 }
 
-
-
-// body {
-//   font-family: 'Lato', sans-serif;
-//   color: white;
-//   background-color: teal;
-// }
-// h1 {
-//   font-size: 60px;
-//   margin: 0px;
-//   padding: 0px;
-// }
-// h3 {
-//   margin: 0px;
-//   padding: 0px;
-//   color: #999;
-// }
-
-// div.wrap {
-//   width: 500px;
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   vertical-align: middle;
-// }
-
-// div.wrap div {
-//   position: relative;
-//   margin: 50px 0;
-// }
-
-// label {
-//   position: absolute;
-//   top: 0;
-//   font-size: 30px;
-//   margin: 10px;
-//   padding: 0 10px;
-//   background-color: teal;
-//   -webkit-transition: top .2s ease-in-out, 
-//                       font-size .2s ease-in-out;
-//   transition: top .2s ease-in-out, 
-//               font-size .2s ease-in-out;
-// }
-
-// .active {
-//   top: -25px;
-//   font-size: 20px;
-// }
-
-// input[type=text] {
-//   width: 100%;
-//   padding: 20px;
-//   border: 1px solid white;
-//   font-size: 20px;
-//   background-color: teal;
-//   color: white;
-// } 
-
-// input[type=text]:focus {
-//   outline: none;
-// }

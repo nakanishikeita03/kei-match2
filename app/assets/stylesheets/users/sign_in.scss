@@ -1,35 +1,111 @@
 .signinPage {
-  margin-top: 10vh;
-  .title {
-    color:#77EEFF	;
-    margin: 20px 0;
-    text-align: center;
+  background: #f5f5f5;
+  height:calc(100vh - 77px);
+  @media (max-width:767px) {
+    height:100%
   }
-  .userIcon {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin: 0 auto;
-    background: #77EEFF	;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .loginBtn {
-    padding: 12px;
-    width: 200px;
-    border-radius: 21px;
-    background: #77EEFF	;
-    color: #fff;
-    text-align: center;
-    border: none;
-    margin-top: 20px;
-    opacity: 1;
-    transition: opacity .5s;
-    cursor: pointer;
-    &:hover {
-      opacity: .7;
+    .title {
+      color:#66CC33	;
+      padding: 20px 0;
+      text-align: center;
     }
-  }
+      .snsIcons{
+        padding: 20px 0;
+        text-decoration: none;
+        justify-content: space-around;
+        display: flex;
+        @media (max-width:767px) {
+          display: block;
+        }
+        .snsIcons-container{
+          .snsIcon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            justify-content: center;
+            opacity: 0.7;
+            background: #66CC33	;
+
+            a{
+              text-decoration: none;
+            }
+            .fa{
+              color: #fff;
+              font-size:36px; 
+            } 
+            .font-size{
+              font-size:48px; 
+            }
+          }
+          .snsIcon-twitter{
+            background-color:rgb(29, 161, 242);
+          }
+          .snsIcon-facebook{
+            background-color: #4267b2;
+          }
+          .snsIcon-google{
+            background-color: red;
+          }
+          .snsIcon-text{
+            padding:10px;
+            color:#ddd;
+            text-align: center;
+          }
+          .text-changed{
+            color:#808080;
+            font-weight:boid;
+          }
+          .opacity{
+            opacity: 1;
+          }
+        }
+      }
+      .loginBtn {
+        padding: 12px;
+        width: 200px;
+        border-radius: 21px;
+        background: #66CC33	;
+        color: #fff;
+        text-align: center;
+        border: none;
+        margin-top: 20px;
+        opacity: 1;
+        transition: opacity .5s;
+        cursor: pointer;
+        &:hover {
+          opacity: .7;
+        }
+      }
+      label {
+        font-size: 14px;
+        margin: 10px;
+        -webkit-transition: top .2s ease-in-out, 
+                            font-size .2s ease-in-out;
+        transition: top .2s ease-in-out, 
+                    font-size .2s ease-in-out;
+      }
+      
+      .active {
+        position: relative;
+        top: 1px;
+        font-size: 20px;
+      }
+      
+      
+      input[type=text]:focus {
+        outline: none;
+      }
+      textarea:focus {
+        outline: none;
+      }
+      .signupPage-link{
+        color:#808080;
+        &:hover{
+          color:#66CC33;
+        }
+      }
 }
