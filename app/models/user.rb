@@ -9,17 +9,15 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :user
   has_many :sns_credentials, dependent: :destroy
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[facebook google_oauth2]
+         :omniauthable, omniauth_providers: %i[facebook google_oauth2 twitter]
 
   mount_uploader :img_name, ImgNameUploader
-  enum sex: { 男: 0, 女: 1 }
-  enum hobby: { 読書: 0, 映画: 1, 旅行: 2, アウトドア: 3, お酒: 4 }
   validates :img_name, presence: true
-
+  
+  #フォロー機能メソッド
   def follow(other_user)
     unless self == other_user
       self.relationships.find_or_create_by(follow_id: other_user.id)
@@ -35,9 +33,9 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
 
+  #SNS認証メソッド
   def self.without_sns_data(auth)
     user = User.where(email: auth.info.email).first
-
       if user.present?
         sns = SnsCredential.create(
           uid: auth.uid,
@@ -48,6 +46,7 @@ class User < ApplicationRecord
         user = User.new(
           name: auth.info.name,
           email: auth.info.email,
+          # remote_img_name_url: auth.info.image
         )
         sns = SnsCredential.new(
           uid: auth.uid,
@@ -63,6 +62,7 @@ class User < ApplicationRecord
       user = User.new(
         name: auth.info.name,
         email: auth.info.email,
+        # remote_img_name_url: auth.info.image
       )
     end
     return {user: user}
