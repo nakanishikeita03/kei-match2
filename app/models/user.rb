@@ -15,6 +15,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[facebook google_oauth2 twitter]
 
   mount_uploader :img_name, ImgNameUploader
+  validates :name, presence: true, length: { maximum: 15 },profanity_filter: true
+  validates :self_introduction, presence: true,length: { maximum: 200 },profanity_filter: true
   validates :img_name, presence: true
   
   #フォロー機能メソッド
@@ -43,6 +45,7 @@ class User < ApplicationRecord
           user_id: user.id
         )
       else
+        # binding.pry
         user = User.new(
           name: auth.info.name,
           email: auth.info.email,

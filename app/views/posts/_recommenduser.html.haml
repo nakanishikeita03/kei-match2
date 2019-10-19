@@ -1,0 +1,10 @@
+.recommendusers-users-container.d-flex.m-4
+  .recommenduser-user
+    = image_tag(recommenduser.img_name.url(:thumb), width: '50', height: '40')
+    = recommenduser.name
+  - if user_signed_in?
+    .postShow-follow.mr-0
+      = render 'relationships/follow_button', user: recommenduser 
+  - else
+    .postShow-follow-notin.ml-0
+      =link_to "フォローする", new_user_session_path

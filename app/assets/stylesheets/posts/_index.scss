@@ -3,21 +3,82 @@
     margin-top:60px;
     padding: 60px 0;
       .postIndex-container{
-        max-width: 935px;
+        max-width: 1105px;
         display: flex;
         @media (max-width:767px) {
           display: block;
         }
         .postIndex-left{
-          max-width: 293px;
+          max-width: 340px;
           width: 100%;
           background-color:#fff;
           margin-right:40px;
-          height:100px;
+          height:100%;
           @media (max-width:767px) {
             margin:0 auto 20px;
             margin-bottom:20px;
           }
+            .recommendusers-container{
+              .recommendusers-title{
+                justify-content: space-between;
+                .recommendusers-recommend{
+                  color:#777;
+                }
+              }
+              .recommendusers-users{
+                .recommendusers-users-container{
+                  align-items: center;
+                  justify-content: space-between;
+                  font-size: 14px;
+                  font-weight: bold;
+                    img{
+                      width: 50px;
+                      height: 50px;
+                      border-radius: 50%;
+                      overflow: hidden;
+                      margin-right: 10px;
+                    }
+                    .postShow-follow-notin{
+                      width: 35%;
+                      background: #66CC33;
+                      border: 1px solid #66CC33;
+                      color: #fff;
+                      display: block;
+                      line-height: 24px;
+                      font-size: 10px;
+                      text-align: center;
+                        a{
+                          color:#fff;
+                          text-decoration: none;
+                        }
+                      }
+                      .follow-now {
+                        padding: 0 10px;
+                        width: 100%;
+                        margin: 0;
+                        background: #aaa;
+                        border: 1px solid #aaa;
+                        color: #fff;
+                        display: block;
+                        line-height: 24px;
+                        font-size: 10px;
+                        text-align: center;
+                    }
+                    .follows {
+                      padding: 0 10px;
+                      width: 100%;
+                      margin: 0;
+                      background: #66CC33;
+                      border: 1px solid #66CC33;
+                      color: #fff;
+                      display: block;
+                      line-height: 24px;
+                      font-size: 10px;
+                      text-align: center;
+                  }
+                }
+              }
+            }
         }
         .postIndex-right{
           width: 614px;
