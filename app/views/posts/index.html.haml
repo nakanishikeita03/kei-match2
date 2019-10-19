@@ -4,6 +4,14 @@
   .postIndex
     .postIndex-container.container.mx-auto
       .postIndex-left
+        .recommendusers-container.container
+          .recommendusers-title.d-flex.pt-4
+            .recommendusers-recommend
+              おすすめ
+            .recommendusers-all
+              すべて見る
+          .recommendusers-users
+            = render partial:'recommenduser', collection: @recommendusers
       .postIndex-right
         .post-contents
           = render partial: 'post', collection: @posts
