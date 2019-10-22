@@ -10,8 +10,12 @@
           .postShow-user__name
             = @post.user.name
         - if user_signed_in?
-          .postShow-follow
-            = render 'relationships/follow_button', user: @user 
+          - if current_user.id != @post.user_id
+            .postShow-follow
+              = render 'relationships/follow_button', user: @user 
+          - else 
+            .postShow-follow-notin
+              =link_to "投稿を削除", post_path(@post.id), method: :delete
         - else
           .postShow-follow-notin
             =link_to "フォローする", new_user_session_path

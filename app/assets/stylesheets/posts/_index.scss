@@ -88,7 +88,9 @@
             max-width: 300px;
           }
             .post-contents{
-              text-decoration: none;
+              a{
+                text-decoration: none;
+              }
                 &:hover{
                   text-decoration: none;
                 }
@@ -120,6 +122,9 @@
                 }
                 .post-content-time{
                   justify-content: space-between;
+                  color: #777;
+                  font-size: 14px;
+                  text-decoration: none;
                   a{
                   color: #777;
                   font-size: 14px;
