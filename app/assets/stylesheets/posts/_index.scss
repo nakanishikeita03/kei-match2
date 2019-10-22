@@ -89,12 +89,13 @@
           }
             .post-contents{
               text-decoration: none;
-              .Indexlink{
                 &:hover{
                   text-decoration: none;
                 }
               .post-content{
-                text-decoration: none;
+                a{
+                  text-decoration: none;
+                }
                 .post-content-user{
                   align-items: center;
                   border-bottom: 1px solid #333;
@@ -118,13 +119,16 @@
                   }
                 }
                 .post-content-time{
+                  justify-content: space-between;
+                  a{
                   color: #777;
                   font-size: 14px;
+                  text-decoration: none;
                   @media (max-width:767px) {
                     font-size: 12px;
                   }
+                  }
                 }
-              }
               }
         }
         .pagenation{
