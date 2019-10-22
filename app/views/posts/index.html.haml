@@ -9,7 +9,8 @@
             .recommendusers-recommend
               おすすめ
             .recommendusers-all
-              すべて見る
+              = link_to users_recommend_path do
+                すべて見る
           .recommendusers-users
             = render partial:'recommenduser', collection: @recommendusers
       .postIndex-right

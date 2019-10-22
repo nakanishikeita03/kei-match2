@@ -40,14 +40,15 @@ $(function() {
     form_num ++;
   });
 
-  // $('#team_members_box').on('click', '.member_delete', function() {
-  //   var inputId = $(this).data('id');
-  //   var defaultData = $(this).data('default');
-  //   if (defaultData == 'default') {
-  //     $(this).prev().prop('checked', true);
-  //     $('#add_member_' + inputId).hide();
-  //   }else{
-  //     $('#add_member_' + inputId).remove();
-  //   }
-  // });
+  $(document).ready(function(){
+    $('.posts-new-text').blur(function() {
+         if($(this).val().length === 0){
+           $('.nice-label').removeClass("focus");
+         }
+         else { returns; }
+       })
+       .focus(function() {
+         $('.nice-label').addClass("focus")
+       });
+ });
 });
