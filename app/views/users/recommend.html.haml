@@ -1,0 +1,11 @@
+= render 'shared/header'
+%body
+  .postIndex
+    .postRecommend-container.container.mx-auto
+      .recommnend-users-container.container.mx-auto
+        .recommend-users-title.d-flex.pt-4
+          .recommend-users-recommend
+            おすすめ
+        .recommend-users-users
+          = render partial:'posts/recommenduser', collection: @recommendusers
+          

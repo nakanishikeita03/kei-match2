@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get '/sign_up',to: 'sign_up#index'
+  get 'users/recommend',to: 'users#recommend'
+  
   devise_for :users,
   controllers: {
     sessions: 'users/sessions',
@@ -13,6 +17,6 @@ Rails.application.routes.draw do
     resources :messages, only: [:create, :index]
   end
 
-  get '/sign_up',to: 'sign_up#index'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

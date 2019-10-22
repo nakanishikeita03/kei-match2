@@ -1,0 +1,66 @@
+.postRecommend-container{
+  max-width: 505px;
+  .recommnend-users-container{
+    max-width: 640px;
+    width: 100%;
+    background-color: #fff;
+    height: 100%;
+    .recommend-users-title{
+      justify-content: space-between;
+        .recommend-users-recommend{
+          color:#777;
+        }
+      }
+        .recommendusers-users-container{
+          align-items: center;
+          justify-content: space-between;
+          font-size: 14px;
+          font-weight: bold;
+            img{
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              overflow: hidden;
+              margin-right: 10px;
+            }
+            .postShow-follow-notin{
+              width: 35%;
+              background: #66CC33;
+              border: 1px solid #66CC33;
+              color: #fff;
+              display: block;
+              line-height: 24px;
+              font-size: 10px;
+              text-align: center;
+                a{
+                  color:#fff;
+                  text-decoration: none;
+                }
+              }
+              .follow-now {
+                padding: 0 10px;
+                width: 100%;
+                margin: 0;
+                background: #aaa;
+                border: 1px solid #aaa;
+                color: #fff;
+                display: block;
+                line-height: 24px;
+                font-size: 10px;
+                text-align: center;
+            }
+            .follows {
+              padding: 0 10px;
+              width: 100%;
+              margin: 0;
+              background: #66CC33;
+              border: 1px solid #66CC33;
+              color: #fff;
+              display: block;
+              line-height: 24px;
+              font-size: 10px;
+              text-align: center;
+          }
+        }
+      }
+    }
