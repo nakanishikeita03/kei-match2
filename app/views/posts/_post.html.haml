@@ -9,4 +9,9 @@
       = post.text
     .post-content-time.d-flex
       = post.created_at.strftime("%Y-%m-%d %H:%M")
-      = render 'likes/like', post: post
+      - if user_signed_in?
+        = render 'likes/like', post: post
+      - else
+        .like-link
+          .iine__button
+            ❤️#{post.likes.count}

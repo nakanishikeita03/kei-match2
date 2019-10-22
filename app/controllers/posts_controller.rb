@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!,       only:[:new,:create]
+  before_action :set_posts,                only:[:show,:destroy]
 
   def index
     @posts = Post.order("created_at DESC").page(params[:page]).per(5)
@@ -15,11 +16,19 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.save
-      redirect_to controller: :posts, action: :index
+    if params[:post][:tasks_attributes]["0"][:time] == "" || params[:post][:tasks_attributes]["0"][:language] == ""
+      @post = Post.new
+      @post.tasks.build
+      render "new"
     else
-      # render "new"
-      redirect_to root_path
+      if @post.save
+        redirect_to controller: :posts, action: :index
+      else
+        @post = Post.new
+        @post.tasks.build
+        render "new"
+        # redirect_to root_path
+      end
     end
   end
 
@@ -38,7 +47,10 @@ class PostsController < ApplicationController
 
   end
 
-
+  def destroy
+    @post.destroy if @post.user_id == current_user.id
+    redirect_to root_path
+  end
 
   private
 
@@ -46,8 +58,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:text,tasks_attributes: [:time,:language]).merge(user_id: current_user.id)
   end
 
-  def task_params
-    params.require(:post).permit(:tasks_attributes).merge(post_id: 1)
+  def set_posts
+    @post = Post.find(params[:id])
   end
-  
 end
