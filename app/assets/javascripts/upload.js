@@ -13,22 +13,13 @@ $(document).on("change", "#file_photo", function(e) {
 });
 
 $(function() {
-  $('input').on('focusin', function() {
-    $(this).parent().find('label').addClass('active');
+  $('.form-control').on('focusin', function() {
+    $(this).parent().find('label').addClass('active-label');
   });
   
-  $('input').on('focusout', function() {
+  $('.form-control').on('focusout', function() {
     if (!this.value) {
-      $(this).parent().find('label').removeClass('active');
-    }
-  });
-  $('textarea').on('focusin', function() {
-    $(this).parent().find('label').addClass('active');
-  });
-  
-  $('textarea').on('focusout', function() {
-    if (!this.value) {
-      $(this).parent().find('label').removeClass('active');
+      $(this).parent().find('label').removeClass('active-label');
     }
   });
 });
