@@ -12,7 +12,8 @@
       = form_tag(root_path,method: :get) do
         %label.fuzzy_search__label
           = submit_tag 'search', :name => nil,class:"fuzzy_search__label--btn"
-        = text_field_tag :search, "",class:"fuzzy_search__field",placeholder:"検索"
+        = text_field_tag :search, "",id:"fuzzy_search__field",class:"fuzzy_search__field",placeholder:"検索"
+      #fuzzy_search__result.m-3
     .header-right
       - if signed_in?
         .header-link

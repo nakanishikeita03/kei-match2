@@ -1,7 +1,7 @@
 .recommendusers-users-container.d-flex.m-4
   .recommenduser-user
-    = image_tag(recommenduser.img_name.url(:thumb), width: '50', height: '40')
-    = recommenduser.name
+    = link_to image_tag(recommenduser.img_name.url(:thumb), width: '50', height: '40'), "/users/#{recommenduser.id}"
+    = link_to "#{recommenduser.name}", "/users/#{recommenduser.id}"
   - if user_signed_in?
     .postShow-follow.mr-0
       = render 'relationships/follow_button', user: recommenduser 
