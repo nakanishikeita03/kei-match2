@@ -1,6 +1,6 @@
 .userEditPage
-  .EditHeader アカウント編集
-  .container.mt-5
+  .EditHeader#aaa アカウント編集
+  .userEditPage-container.container.mt-5
     = form_for current_user, url: registration_path(current_user) do |f|
       %label.rounded-circle.userProfileImg{:for => "file_photo"}
         .userProfileImg_description 画像の変更

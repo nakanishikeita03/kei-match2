@@ -1,7 +1,7 @@
-.userEditPage
+.userEditPage.userNewPage
   .EditHeader アカウント作成
-  .container.mt-5
-    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class:"mt-5" }) do |f|
+  .userEditPage-container.container.mt-5
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class:"py-5" }) do |f|
       = devise_error_messages!
       %label.rounded-circle.userProfileImg{:for => "file_photo"}
         .userProfileImg_description 画像のアップロード
@@ -24,19 +24,6 @@
         = f.password_field :password_confirmation, class:"form-control", id:"password_confirmation.cool", autocomplete: "off"
       .form-group
         %label{:for => "fname"} 自己紹介文
-        = f.text_area :self_introduction, maxlength: "500", rows: "10", class:"form-control",id:"self_introduction.cool"
+        = f.text_area :self_introduction, maxlength: "500", rows: "5", class:"form-control",id:"self_introduction.cool"
       .text-center
         = f.submit "登録", class: "btn submitBtn"
-
--# .wrap
--#   %h1 Rise
--#   %h3 I built something similar as an engineer on Identity.com
--#   %div
--#     %label{:for => "fname"} First Name
--#     %input#fname.cool{:type => "text"}/
--#   %div
--#     %label{:for => "lname"} Last Name
--#     %input#lname.cool{:type => "text"}/
--#   %div
--#     %label{:for => "email"} Some Long Copy Goes Here
--#     %input#email.cool{:type => "text"}/
