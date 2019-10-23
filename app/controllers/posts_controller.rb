@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order("created_at DESC").page(params[:page]).per(5)
-    @recommendusers = User.order("created_at DESC").limit(5)
+    @recommendusers = User.order("created_at DESC").limit(3)
 
   end
 
