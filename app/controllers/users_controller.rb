@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!,       only:[:show,:recommend]
+  before_action :authenticate_user!,       only:[:recommend]
   def index
-    @users = User.where("name LIKE(?) && #{params[:keyword].present?}","%#{params[:keyword]}%")
+    if user_signed_in?
+      @users = User.where("name LIKE(?) && #{params[:keyword].present?}","%#{params[:keyword]}%").where.not(id: current_user.id)
+    else
+      @users = User.where("name LIKE(?) && #{params[:keyword].present?}","%#{params[:keyword]}%")
+    end
     respond_to do |format|
       format.html
       format.json

@@ -4,7 +4,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order("created_at DESC").page(params[:page]).per(5)
-    @recommendusers = User.order("created_at DESC").limit(3)
+    if user_signed_in?
+      @recommendusers = User.order("created_at DESC").limit(3).where.not(id:current_user.id)
+    else
+      @recommendusers = User.order("created_at DESC").limit(3)
+    end
 
   end
 
