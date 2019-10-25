@@ -31,13 +31,11 @@ class PostsController < ApplicationController
         @post = Post.new
         @post.tasks.build
         render "new"
-        # redirect_to root_path
       end
     end
   end
 
   def show
-    @post = Post.find(params[:id])
     @user = User.find(@post.user_id)
     @chart = Task.where(post_id: params[:id]).pluck("language","time")
     #合計の勉強
