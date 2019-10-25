@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!,       only:[:index,:create]
+
   def new
     # @users = User.where.not(id: current_user.id).page(params[:page]).per(10)
     # binding.pry
@@ -9,6 +11,7 @@ class GroupsController < ApplicationController
     @matchingusers = @followingusers & @followerusers
     @users = Kaminari.paginate_array(@matchingusers).page(params[:page]).per(10)
   end
+  
   def create
     @current_user_group_id = GroupUser.where(user_id: current_user.id).pluck('group_id')
     @params_user_group_id = GroupUser.where(user_id: params[:user_id]).pluck('group_id')
