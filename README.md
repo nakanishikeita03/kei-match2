@@ -1,12 +1,17 @@
 # Go-En
+
 駆け出しエンジニアが日々の学習内容の共有ができる、コミュニケーションが取れるwebサービスです。
+
 <img width="1271" alt="スクリーンショット 2019-10-26 13 15 10" src="https://user-images.githubusercontent.com/53807858/67614194-b65a5e00-f7f3-11e9-88c0-dc7ddebeb411.png">
 
 # リンク
+
 https://go-en-jp.com
 
 # テストユーザー
+
 email:test@go-en-jp.com
+
 password:password
 
 # このサービスでできること
@@ -23,15 +28,18 @@ password:password
 ![go-enメッセージ mov](https://user-images.githubusercontent.com/53807858/67615964-a8b1d200-f80d-11e9-963b-c1f0129359c5.gif)
 
 # 特に見ていただきたい点
-- インフラ周り(AWSを使用/Capistranoによる自動デプロイ/ELBをエンドポイントとする常時SSL化/画像データ保存でクラウドストレージS3を使用)
-- 外部APIを利用したログイン機能
+
 - Bootstrapとメディアクエリを活用したレスポンシブ対応
+- 外部APIを利用したログイン機能
+- インフラ周り(AWSを使用/Capistranoによる自動デプロイ/ELBをエンドポイントとする常時SSL化/画像データ保存でクラウドストレージS3を使用)
 
 # 機能ならびに使用技術
+
 - フロントエンド
   - Haml/Sassでのマークアップ
   - jQueryを用いた動的アニメーション/ajax通信の実装
   - Bootstrapとメディアクエリを活用したレスポンシブ対応
+
 - サーバーサイド
   - ユーザー登録(/編集)機能(gem Deviseを使用)
   - ユーザー画像の登録機能 (gem Carrierwaveを使用)
@@ -44,12 +52,14 @@ password:password
   - いいね機能
   - 不適切用語のフィルター(gem Antivirusを使用)
   - 単体テスト(Rspec)
+
 - インフラ
   - CapistranoによるEC2インスタンスへの自動デプロイ
   - お名前.comで独自ドメインを取得後、Route53/ELB/Certificate Managerを用いて常時SSL化
   - S3を用いた画像データのクラウドストレージ保存
 
 # 使用技術一覧
+
 - Ruby 2.5.1
 - Ruby on Rails 5.0.7
 - MySQL 5.6.43
@@ -64,3 +74,16 @@ password:password
   - Route53
   - Certificate Manager
 - Github
+
+# クラウドアーキテクチャ
+
+![go-enインフラ](https://user-images.githubusercontent.com/53807858/67618575-31d80180-f82c-11e9-9449-4d9d95dd5c27.png)
+
+EC2インスタンスにCapistranoを用いて、ローカル環境からコマンド一つで自動デプロイを行うようにしています。
+またCertificate ManagerでSSLサーバ証明書を発行し、お名前.comで取得したドメインをRoute53/ELBで常時SSL化しています。
+
+クラウドストレージにはS3を採用しました。
+
+GitHub上では可視化されませんが、AWSではVPC内のセキュリティグループやIAMユーザーポリシーなどの設定を行い、実際の現場でのアーキテクチャを想定して構成されています。
+
+尚、アプリ内の秘匿情報等はRailsのseacretsを活用し、keyとidを本番環境の環境変数に登録することで管理しています。
