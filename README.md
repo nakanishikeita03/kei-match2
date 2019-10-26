@@ -11,5 +11,4 @@ password:password
 
 # このサービスでできること
 - 学習内容の投稿ができる
-![go-en投稿](https://user-images.githubusercontent.com/53807858/67614749-32a56f00-f7fd-11e9-9cc7-e0e42fc0923b.gif)
-
+![go-en投稿 mov](https://user-images.githubusercontent.com/53807858/67615007-a34e8a80-f801-11e9-852f-31b913211d0f.gif)
