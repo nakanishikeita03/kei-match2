@@ -19,7 +19,7 @@
           #input_box
           %p#add_item_button 追加する
       .form-group.position-relative
-        = f.text_area :text, class: "posts-new-text", rows: "5"
+        = f.text_area :text, class: "posts-new-text p-3", rows: "5"
         = f.label :text, "今日の一言",class:"nice-label"
       .form-group.btn-box
         = f.submit "投稿", class:"button",id:"post_botton"
