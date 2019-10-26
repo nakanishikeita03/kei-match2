@@ -15,6 +15,7 @@ password:password
 ![go-en投稿 mov](https://user-images.githubusercontent.com/53807858/67615007-a34e8a80-f801-11e9-852f-31b913211d0f.gif)
 
 - 他ユーザーの投稿の閲覧ができる
+
 ![go-enフォロー mov](https://user-images.githubusercontent.com/53807858/67616024-abf98d80-f80e-11e9-92d0-5645dd84a06e.gif)
 
 - 相互フォローしたユーザーとメッセージができる
