@@ -1,9 +1,10 @@
 $(function(){
   function buildHTML(message){
+    var imagehtml = message.image == null ? "" : `<img src="${message.image}">`;
      var html = `<div class='message d-flex' data-message-id='${message.id}'>
      <div class='left-message'>
      <div class='left-message__img'>
-     <img src="/uploads/user/img_name/5/thumb_menu5.jpg" alt="Thumb menu5" />
+     ${imagehtml}
      </div>
      </div>
      <div class='right-message'>
