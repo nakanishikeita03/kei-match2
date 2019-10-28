@@ -3,7 +3,6 @@
 }
 .userEditPage {
   background-color: #F5F5F5;
-  height: 100vh;
   @media (max-width:767px) {
     height:100%;
     }
@@ -16,6 +15,7 @@
       
   }
   .userEditPage-container{
+    height: calc(100vh - 20px);
       .userProfileImg {
         position: relative;
         margin: 0 auto 10px auto;

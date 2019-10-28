@@ -1,6 +1,6 @@
 .signinPage {
   background: #f5f5f5;
-  height:calc(100vh - 77px);
+  height:calc(100vh - 60px);
   @media (max-width:767px) {
     height:100%
   }
@@ -29,7 +29,11 @@
             justify-content: center;
             opacity: 0.7;
             background: #66CC33	;
-
+            button{
+              font-family: FontAwesome;
+              background: #66CC33	;
+              border: none;
+            }
             a{
               text-decoration: none;
             }

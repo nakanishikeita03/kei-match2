@@ -4,6 +4,14 @@
     %h2.title ログイン
     .snsIcons
       .snsIcons-container.mt-4
+        .snsIcon.snsIcon-email
+          = form_for(:user, url: user_session_path) do |f|
+            = f.hidden_field :email, value: 'test@go-en-jp.com'
+            = f.hidden_field :password, value: 'password'
+            = button_tag type: 'submit' do
+              = fa_icon 'user'
+        .snsIcon-text.snsIcon-text-twitter
+          テストユーザーでログイン
         .snsIcon.snsIcon-twitter
           = link_to(user_twitter_omniauth_authorize_path, class: "d-flex text-decoration-none") do
             = fa_icon 'twitter'
