@@ -1,6 +1,6 @@
 .userEditPage.userNewPage
   .EditHeader アカウント作成
-  .userEditPage-container.container.mt-5
+  .userEditPage-container.userNewPage-container.container.mt-5
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class:"py-5" }) do |f|
       = devise_error_messages!
       %label.rounded-circle.userProfileImg{:for => "file_photo"}

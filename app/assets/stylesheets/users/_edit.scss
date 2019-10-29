@@ -14,8 +14,14 @@
     color: #fff;
       
   }
+  .userNewPage-container{
+    height: 100% !important;
+  }
   .userEditPage-container{
     height: calc(100vh - 20px);
+    @media (max-width:767px) {
+      height:100%;
+      }
       .userProfileImg {
         position: relative;
         margin: 0 auto 10px auto;
