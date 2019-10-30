@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!,       only:[:recommend]
+  before_action :authenticate_user!,       only:[:show,:recommend]
   def index
     if user_signed_in?
       @users = User.where("name LIKE(?) && #{params[:keyword].present?}","%#{params[:keyword]}%").where.not(id: current_user.id)
