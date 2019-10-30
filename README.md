@@ -14,7 +14,8 @@ email: test@go-en-jp.com
 
 password: password
 
-- ログイン画面
+- ログイン画面の**テストユーザーでログイン**をクリックしていただくと簡単です。
+
 # このサービスでできること
 - 学習内容の投稿ができる
 
@@ -54,6 +55,7 @@ password: password
   - いいね機能
   - 不適切用語のフィルター(gem Antivirusを使用)
   - 単体テスト(Rspec)
+  - 統合テスト(実装中…)
 
 - インフラ
   - CapistranoによるEC2インスタンスへの自動デプロイ
