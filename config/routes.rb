@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  get '/about',to: 'top#index'
   get '/sign_up',to: 'sign_up#index'
   get 'users/recommend',to: 'users#recommend'
   post   '/like/:post_id' => 'likes#like',   as: 'like'
