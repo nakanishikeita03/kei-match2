@@ -50,6 +50,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'faker'
   gem 'pry-rails'
+  gem 'capybara'
 end
 
 group :development do
