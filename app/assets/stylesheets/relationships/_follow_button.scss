@@ -9,6 +9,9 @@
     line-height: 24px;
     font-size: 14px;
     text-align: center;
+    &:hover {
+      opacity: .7;
+    }
 }
 .follows{
   padding: 10px;
@@ -21,4 +24,7 @@
   line-height: 24px;
   font-size: 14px;
   text-align: center;
+  &:hover {
+    opacity: .7;
+  }
 }

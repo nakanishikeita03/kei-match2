@@ -70,6 +70,22 @@
     &-follow{
       display: block;
     }
+    .nonsignin-follow{
+      padding: 10px;
+      width: 45%;
+      margin: 10px auto;
+      background: #66CC33;
+      border: 1px solid #66CC33;
+      color: #fff;
+      display: block;
+      line-height: 24px;
+      font-size: 14px;
+      text-align: center;
+      text-decoration: none;
+      &:hover {
+        opacity: .7;
+      }
+    }
   }
 }
 }

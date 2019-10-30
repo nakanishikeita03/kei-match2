@@ -1,12 +1,13 @@
 .header
   .header-container.d-flex.justify-content-between.mx-auto.p-3
-    .header-left
-      = link_to(posts_path, class: "d-flex") do
-        .header-icon
-          = fa_icon 'laptop '
-        .header-line
-        .header-logo
+    .header-left.d-flex
+      .header-logo
+        = link_to(posts_path) do
           Go-En
+      .header-line
+      .header-icon
+        = link_to about_path do
+          about
     .header-center
       .fuzzy_search
       = form_tag(root_path,method: :get) do

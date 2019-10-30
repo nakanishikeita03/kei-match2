@@ -1,0 +1,35 @@
+.TopPage {
+  height:100%;
+  background-color: #F5F5F5;
+  .TopPage-container{
+    margin-top:60px;
+      .top-container{
+        .top-image{
+          background-size: cover ;
+          background-repeat: no-repeat;
+          height:200px
+        }
+          .go-en-explanation-image-mp4{
+            background-image: url(top.jpg);
+          }
+          .post-image-gif{
+            background-image: url(go-en投稿.mp4.gif);
+          }
+          .post-image-mp4{
+            background-image: url(go-en投稿.jpeg);
+          }
+          .message-image-gif{
+            background-image: url(go-en-message.mp4.gif);
+          }
+          .message-image-mp4{
+            background-image: url(go-en-message.jpeg);
+          }
+          .post-index-image-gif{
+            background-image: url(go-enフォロー.mp4.gif);
+          }
+          .post-index-image-mp4{
+            background-image: url(go-enフォロー.jpeg);
+          }
+      }
+    }
+}

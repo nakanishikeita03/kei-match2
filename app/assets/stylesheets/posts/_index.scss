@@ -51,6 +51,9 @@
                           color:#fff;
                           text-decoration: none;
                         }
+                        &:hover {
+                          opacity: .7;
+                        }
                       }
                       .follow-now {
                         padding: 0 10px;
@@ -63,6 +66,9 @@
                         line-height: 24px;
                         font-size: 10px;
                         text-align: center;
+                        &:hover {
+                          opacity: .7;
+                        }
                     }
                     .follows {
                       padding: 0 10px;
@@ -75,6 +81,9 @@
                       line-height: 24px;
                       font-size: 10px;
                       text-align: center;
+                      &:hover {
+                        opacity: .7;
+                      }
                   }
                 }
               }
