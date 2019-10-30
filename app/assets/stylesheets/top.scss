@@ -10,25 +10,25 @@
           height:200px
         }
           .go-en-explanation-image-mp4{
-            background-image: url(top.jpg);
+            background-image: image-url("top.jpg");
           }
           .post-image-gif{
-            background-image: url(go-en投稿.mp4.gif);
+            background-image: image-url("go-en-post.mp4.gif");
           }
           .post-image-mp4{
-            background-image: url(go-en投稿.jpeg);
+            background-image: image-url("go-en-post.jpeg");
           }
           .message-image-gif{
-            background-image: url(go-en-message.mp4.gif);
+            background-image: image-url("go-en-message.mp4.gif");
           }
           .message-image-mp4{
-            background-image: url(go-en-message.jpeg);
+            background-image: image-url("go-en-message.jpeg");
           }
           .post-index-image-gif{
-            background-image: url(go-enフォロー.mp4.gif);
+            background-image: image-url("go-en-follow.mp4.gif");
           }
           .post-index-image-mp4{
-            background-image: url(go-enフォロー.jpeg);
+            background-image: image-url("go-en-follow.jpeg");
           }
       }
     }
