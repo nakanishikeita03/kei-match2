@@ -19,15 +19,15 @@ password: password
 # このサービスでできること
 - 学習内容の投稿ができる
 
-![go-en投稿 mov](https://user-images.githubusercontent.com/53807858/67615007-a34e8a80-f801-11e9-852f-31b913211d0f.gif)
+![go-en投稿 mp4](https://user-images.githubusercontent.com/53807858/68015018-781ddc80-fcd4-11e9-8369-8fa5760a1142.gif)
 
 - 他ユーザーの投稿の閲覧ができる
 
-![go-enフォロー mov](https://user-images.githubusercontent.com/53807858/67616024-abf98d80-f80e-11e9-92d0-5645dd84a06e.gif)
+![go-enフォロー mp4](https://user-images.githubusercontent.com/53807858/68015016-781ddc80-fcd4-11e9-9df5-2c08966e676c.gif)
 
 - 相互フォローしたユーザーとメッセージができる
 
-![go-enメッセージ mov](https://user-images.githubusercontent.com/53807858/67615964-a8b1d200-f80d-11e9-963b-c1f0129359c5.gif)
+![go-enメッセージ mp4](https://user-images.githubusercontent.com/53807858/68015017-781ddc80-fcd4-11e9-97b3-c9db5d8ad492.gif)
 
 # 特に見ていただきたい点
 
@@ -50,12 +50,12 @@ password: password
   - 学習内容投稿(/削除)機能
   - 学習時間の可視化(gem Chartkickを使用)
   - 相互フォローユーザーとのメッセージ機能
-  - ユーザー検索機能(ajax通信での非同期検索)
+  - ユーザー検索機能(ajax通信での非同期検索(インクリメンタルサーチ))
   - 他ユーザーへのフォロー機能
   - いいね機能
   - 不適切用語のフィルター(gem Antivirusを使用)
-  - 単体テスト(Rspec)
-  - 統合テスト(実装中…)
+  - 単体テスト(RSpec)
+  - 統合テスト(外部APIを利用した機能のテスト(モックの使用),gem selenium-webdriver/ChromeDriverを用いたブラウザテスト)
 
 - インフラ
   - CapistranoによるEC2インスタンスへの自動デプロイ
@@ -91,6 +91,14 @@ EC2インスタンスにCapistranoを用いて、ローカル環境からコマ�
 GitHub上では可視化されませんが、AWSではVPC内のセキュリティグループやIAMユーザーポリシーなどの設定を行い、実際の現場でのアーキテクチャを想定して構成されています。
 
 尚、アプリ内の秘匿情報等はRailsのseacretsを活用し、keyとidを本番環境の環境変数に登録することで管理しています。
+
+# テスト
+
+![go-enfeatureテスト mp4](https://user-images.githubusercontent.com/53807858/68014109-fe84ef00-fcd1-11e9-8aea-21cbd22c2aac.gif)
+
+- 単体テストはRSpecを使用しました。gem factory_botやbefore/letメソッドの使用でなるべく少ないコードで機能をテストすることを心がけました。
+- 統合テストはモックを使用し、外部APIを利用した機能のテストの作成。gem selenium-webdriver/ChromeDriverを用いてブラウザでテストしています。
+
 
 # Go-Enを作った理由
 
