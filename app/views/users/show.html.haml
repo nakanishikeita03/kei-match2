@@ -16,7 +16,7 @@
               = link_to(content_tag(:i, "", class: 'fa fa-undo'), edit_user_registration_path)
               %span 情報を編集
             .userAction_logout.userAction_common
-              = link_to(content_tag(:i, "", class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete)
+              = link_to(content_tag(:i, "", class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete,class: "signout-icon")
               %span ログアウト
         - else
           .userAction.userAction-follow
