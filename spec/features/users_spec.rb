@@ -23,13 +23,12 @@ describe "UserFeature" do
     end
 
     it "すでに連携されたユーザーがサインアップしようとするとユーザーは増えない" do
-        click_link "facebookでログイン"
-        attach_file "file_photo", "spec/fixtures/user.jpg"
-        fill_in "user[self_introduction]", with: 'こんにちは'
-        fill_in "user[password]",with: 12345678
-        fill_in "user[password_confirmation]",with: 12345678
-        find('input[type="submit"]').click
-
+      click_link "facebookでログイン"
+      attach_file "file_photo", "spec/fixtures/user.jpg"
+      fill_in "user[self_introduction]", with: 'こんにちは'
+      fill_in "user[password]",with: 12345678
+      fill_in "user[password_confirmation]",with: 12345678
+      find('input[type="submit"]').click
       expect{
         find(".user-icon").click
         find(".signout-icon").click
