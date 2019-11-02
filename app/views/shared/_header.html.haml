@@ -22,7 +22,7 @@
             = link_to new_group_path do
               = fa_icon 'heart'
           .header-link__icon
-            = link_to user_path(current_user.id) do
+            = link_to user_path(current_user.id) , class:"user-icon" do
               = fa_icon 'user'
       - else
         %ul.signin-btns
