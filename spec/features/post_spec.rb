@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'spec_helper'
 
-describe 'トップページ', type: :feature do
+describe 'PostFeature', type: :feature do
   let!(:user_a) { create(:user) }
   let!(:user_b) { create(:user) }
   let!(:post_a) { create(:post, user_id: user_a.id )}

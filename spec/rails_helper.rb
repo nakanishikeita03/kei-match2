@@ -11,6 +11,7 @@ require 'devise'
 require 'kaminari'
 require File.expand_path("spec/support/controller_macros.rb")
 require File.expand_path("spec/support/omniauth_macros.rb")
+require File.expand_path("spec/support/session_macros.rb")
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -43,6 +44,8 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include Devise::TestHelpers, type: :controller
   config.include ControllerMacros
+  config.include OmniauthMacros
+  config.include SessionMacros
   config.include Rails.application.routes.url_helpers
 
 
@@ -71,5 +74,4 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   OmniAuth.config.test_mode = true
-  config.include OmniauthMacros
 end
