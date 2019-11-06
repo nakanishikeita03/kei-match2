@@ -20,7 +20,7 @@ default: &default
 development:
   <<: *default
   database: kei-match_development
-  host: <%= ENV['DB_HOST'] %>
+  socket: <%= ENV['DB_HOST'] %>
   
 
 # Warning: The database defined as "test" will be erased and
