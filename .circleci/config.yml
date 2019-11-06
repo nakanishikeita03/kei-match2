@@ -24,7 +24,11 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
             - v1-dependencies-
-
+      - run:
+          name: update bundler
+          command: |
+            gem update --system
+            gem install bundler
       - run:
           name: install dependencies
           command: |
