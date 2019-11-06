@@ -39,7 +39,7 @@ describe UsersController do
     context "ログインしていない場合" do
       it "サインインページに変遷する" do
         get :recommend
-        expect(response).to redirect_to new_user_session_path
+        expect(response).to render_template :recommend
       end
     end
   end
