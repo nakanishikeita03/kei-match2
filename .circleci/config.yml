@@ -73,10 +73,7 @@ jobs:
           MYSQL_PASSWORD: ''
           MYSQL_PORT: 3306
       - image: circleci/mysql:5.6
-        environment:
-          MYSQL_ALLOW_EMPTY_PASSWORD: true
-          MYSQL_ROOT_PASSWORD: ''
-          MYSQL_DATABASE: ci_rails_sample_test
+
     working_directory: ~/repo
     steps:
       - checkout
@@ -86,12 +83,19 @@ jobs:
       - run:
           name: データベースの起動を待機
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
       - run:
-          name: データベースのセットアップ
-          command: bundle exec rake db:create
-      - run: 
-          name: テストの実行
-          command: bundle exec rspec
+          name: run tests
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+
+            bundle exec rspec --format progress \
+                            --format RspecJunitFormatter \
+                            --out /tmp/test-results/rspec.xml \
+                            --format progress \
+                            $TEST_FILES
 
 
 workflows:
