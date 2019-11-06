@@ -90,10 +90,7 @@ jobs:
           command: |
             mkdir /tmp/test-results
 
-            bundle exec rspec --format progress \
-                            --out /tmp/test-results/rspec.xml \
-                            --format progress \
-                            $TEST_FILES
+            bundle exec rspec
 
 
 workflows:
