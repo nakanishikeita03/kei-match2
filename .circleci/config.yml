@@ -85,16 +85,13 @@ jobs:
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
       - run: bundle exec rake db:create
       - run: bundle exec rake db:migrate
-      - run:
-          name: run tests
-          command: |
-            mkdir /tmp/test-results
-
-            bundle exec rspec --format progress \
+      - type: shell
+        command: |
+          bundle exec rspec --profile 10 \
                             --format RspecJunitFormatter \
-                            --out /tmp/test-results/rspec.xml \
+                            --out test_results/rspec.xml \
                             --format progress \
-                            $TEST_FILES
+                            $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
 
 
 workflows:
