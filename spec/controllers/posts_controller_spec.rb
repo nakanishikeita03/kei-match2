@@ -69,23 +69,23 @@ describe PostsController do
 
   describe 'POST #create' do
 
-  context "ログインしている場合" do
-    before do
-      login_user user
-    end
+  # context "ログインしている場合" do
+  #   before do
+  #     login_user user
+  #   end
 
-    it "postが生成される" do
-      expect do
-        post :create, params: params
-      end.to change(Post, :count).by(1)
-    end
+  #   it "postが生成される" do
+  #     expect do
+  #       post :create, params: params
+  #     end.to change(Post, :count).by(1)
+  #   end
 
-    it "トップページに変遷する" do
-      get :create, params: params
-      expect(response).to redirect_to root_path
-    end
+  #   it "トップページに変遷する" do
+  #     get :create, params: params
+  #     expect(response).to redirect_to root_path
+  #   end
 
-  end
+  # end
 
 
   context "ログインしていない場合" do
