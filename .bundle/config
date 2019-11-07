@@ -1,2 +1,0 @@
----
-BUNDLE_BUILD__MYSQL2: "--with-opt-lib=/usr/local/opt/openssl/lib --with-opt-include=-I/usr/local/opt/openssl/include"
