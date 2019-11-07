@@ -34,6 +34,7 @@ password: password
 - Bootstrapとメディアクエリを活用したレスポンシブ対応
 - jQueryを用いた動的アニメーション/ajax通信の実装(インクリメンタルサーチ/メッセージ自動更新)
 - 外部APIを利用したログイン機能
+- CircleCIとGitHubを連携させて自動テスト、gem selenium-webdriver/ChromeDriverを用いてのブラウザでテスト
 - インフラ周り(AWSを使用/Capistranoによる自動デプロイ/ELBをエンドポイントとする常時SSL化/画像データ保存でクラウドストレージS3を使用)
 
 # 機能ならびに使用技術
@@ -54,7 +55,7 @@ password: password
   - 他ユーザーへのフォロー機能
   - いいね機能
   - 不適切用語のフィルター(gem Antivirusを使用)
-  - 単体テスト(RSpec)
+  - 単体テスト(RSpec,cicleCIを用いた動作確認)
   - 統合テスト(外部APIを利用した機能のテスト(モックの使用),gem selenium-webdriver/ChromeDriverを用いたブラウザテスト)
 
 - インフラ
@@ -92,13 +93,18 @@ GitHub上では可視化されませんが、AWSではVPC内のセキュリテ�
 
 尚、アプリ内の秘匿情報等はRailsのseacretsを活用し、keyとidを本番環境の環境変数に登録することで管理しています。
 
-# テスト
+# RSpec/CircleCI
 
 ![go-enfeatureテスト mp4](https://user-images.githubusercontent.com/53807858/68014109-fe84ef00-fcd1-11e9-8aea-21cbd22c2aac.gif)
 
-- 単体テストはRSpecを使用しました。gem factory_botやbefore/letメソッドの使用でなるべく少ないコードで機能をテストすることを心がけました。
-- 統合テストはモックを使用し、外部APIを利用した機能のテストの作成。gem selenium-webdriver/ChromeDriverを用いてブラウザでテストしています。
+単体テストはRSpecを使用しました。gem factory_botやbefore/letメソッドの使用でなるべく少ないコードで機能をテストすることを心がけました。
 
+統合テストはモックを使用し、外部APIを利用した機能のテストの作成。gem selenium-webdriver/ChromeDriverを用いてブラウザでテストしています。
+
+CircleCIを用いてRSpecでのアプリケーション動作確認を行なっています。CircleCIの設定は[.ciecleci/config.yml](https://github.com/nakanishikeita03/kei-match2/blob/master/.circleci/config.yml)を見て頂けるとわかるかと思います。
+最終的なテスト時間は以下の通りです。
+
+<img width="1353" alt="スクリーンショット 2019-11-07 12 49 25" src="https://user-images.githubusercontent.com/53807858/68358900-505bc800-015d-11ea-95b9-29ee65bdb8cc.png">
 
 # Go-Enを作った理由
 
