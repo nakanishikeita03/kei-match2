@@ -53,21 +53,17 @@ jobs:
 
             bundle exec rspec
 
-  - store_test_results:
-      path: /tmp/test-results
-  - store_artifacts:
-      path: /tmp/test-results
-      destination: test-results
-
-  - add_ssh_keys:
-      fingerprints:
+  deploy:
+    machine:
+      image: circleci/classic:edge
+    steps:
+      - checkout
+      # CircleCIに登録した秘密鍵を呼び出す。
+      - add_ssh_keys:
+        fingerprints:
         - "64:67:3d:85:53:67:c4:43:ac:48:e0:fb:09:42:ff:cf"
-  - deploy:
-          name: Capistrano deploy
-          command:
-              bundle exec cap production deploy
-
-
+      - run: ssh ${USER_NAME}@${HOST_NAME} 'cd todoList && git pull && docker-compose run python ./manage.py migrate'
+      
 workflows:
   version: 2
   workflows:
