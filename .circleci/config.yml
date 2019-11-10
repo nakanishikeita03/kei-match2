@@ -31,7 +31,7 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "Gemfile.lock" }}
           - v1-dependencies-
-      - run: gem install mysql2 -v '0.4.1' --source 'https://rubygems.org/'
+      - run: gem install mysql2 -v '0.4.1' -- --with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include
       - run:
           name: install dependencies
           command: |
