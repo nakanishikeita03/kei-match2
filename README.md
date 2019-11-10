@@ -99,6 +99,7 @@ GitHub上では可視化されませんが、AWSではVPC内のセキュリテ�
 ![go-enfeatureテスト mp4](https://user-images.githubusercontent.com/53807858/68014109-fe84ef00-fcd1-11e9-8aea-21cbd22c2aac.gif)
 
 単体テストはRSpecを使用しました。gem factory_botやbefore/letメソッドの使用でなるべく少ないコードで機能をテストすることを心がけました。
+gem simplecovでのカバレッジ計測を行なっています。
 
 統合テストはモックを使用し、外部APIを利用した機能のテストの作成。**gem selenium-webdriver/ChromeDriverを用いてブラウザでテストしています。**
 
