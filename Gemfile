@@ -53,6 +53,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem "simplecov"
 end
 
 group :development do
