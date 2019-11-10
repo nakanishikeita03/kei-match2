@@ -52,7 +52,6 @@ jobs:
             mkdir /tmp/test-results
 
             bundle exec rspec
-
   deploy:
     machine:
       image: circleci/classic:edge
@@ -69,9 +68,7 @@ workflows:
   workflows:
     jobs:
       - test
-      - deploy:
-          requires:
-            - build
+      - deploy
           # masterブランチがpushされた場合のみdeployするようにする。
           filters:
             branches:
