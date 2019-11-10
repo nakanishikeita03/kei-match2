@@ -15,9 +15,32 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - run: gem update bundler
+
       - run:
-          name: bundle install
-          command: bundle install --path vendor/bundle
+          name: Install System Dependencies
+          command: |
+                  sudo apt-get update
+                  sudo apt-get install -y libappindicator1 fonts-liberation libappindicator3-1
+                  export CHROME_BIN=/usr/bin/google-chrome
+                  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+                  sudo apt-get install -f
+                  sudo dpkg -i google-chrome*.deb
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          - v1-dependencies-
+
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
       - run:
           name: データベースの起動を待機
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m

@@ -79,6 +79,7 @@ password: password
   - Route53
   - Certificate Manager
 - Github
+- CircleCI
 
 # クラウドアーキテクチャ
 
