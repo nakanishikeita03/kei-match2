@@ -52,10 +52,26 @@ jobs:
             mkdir /tmp/test-results
 
             bundle exec rspec
-
+  deploy:
+    machine:
+      image: circleci/classic:edge
+    steps:
+      - checkout
+      # CircleCIに登録した秘密鍵を呼び出す。
+      - add_ssh_keys:
+        fingerprints:
+        - "64:67:3d:85:53:67:c4:43:ac:48:e0:fb:09:42:ff:cf"
+      - run: bundle exec cap production deploy
 
 workflows:
   version: 2
   workflows:
     jobs:
       - test
+      - deploy:
+          requires:
+            - test
+          # masterブランチがpushされた場合のみdeployするようにする。
+          filters:
+            branches:
+              only: master
