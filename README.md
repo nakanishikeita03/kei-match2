@@ -102,7 +102,7 @@ GitHub上では可視化されませんが、AWSではVPC内のセキュリテ�
 
 統合テストはモックを使用し、外部APIを利用した機能のテストの作成。**gem selenium-webdriver/ChromeDriverを用いてブラウザでテストしています。**
 
-**またCircleCIを用いてRSpecでのアプリケーション動作確認を行なっています。**CircleCIの設定は[.ciecleci/config.yml](https://github.com/nakanishikeita03/kei-match2/blob/master/.circleci/config.yml)を見て頂けるとわかるかと思います。
+**またCircleCIを用いてRSpecでのアプリケーション動作確認**を行なっています。CircleCIの設定は[.ciecleci/config.yml](https://github.com/nakanishikeita03/kei-match2/blob/master/.circleci/config.yml)を見て頂けるとわかるかと思います。
 最終的なテスト時間は以下の通りです。
 
 <img width="1353" alt="スクリーンショット 2019-11-07 12 49 25" src="https://user-images.githubusercontent.com/53807858/68358900-505bc800-015d-11ea-95b9-29ee65bdb8cc.png">
