@@ -53,6 +53,20 @@ jobs:
 
             bundle exec rspec
 
+  - store_test_results:
+      path: /tmp/test-results
+  - store_artifacts:
+      path: /tmp/test-results
+      destination: test-results
+
+  - add_ssh_keys:
+      fingerprints:
+        - "64:67:3d:85:53:67:c4:43:ac:48:e0:fb:09:42:ff:cf"
+  - deploy:
+          name: Capistrano deploy
+          command:
+              bundle exec cap production deploy
+
 
 workflows:
   version: 2
