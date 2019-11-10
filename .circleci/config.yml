@@ -69,7 +69,3 @@ workflows:
     jobs:
       - test
       - deploy
-          # masterブランチがpushされた場合のみdeployするようにする。
-          filters:
-            branches:
-              only: master
