@@ -55,7 +55,7 @@ password: password
   - 他ユーザーへのフォロー機能
   - いいね機能
   - 不適切用語のフィルター(gem Antivirusを使用)
-  - 単体テスト(RSpec,cicleCIを用いた動作確認)
+  - 単体テスト(RSpec,cicleCIを用いた動作確認,gem Simplecovでのカバレッジ計測)
   - 統合テスト(外部APIを利用した機能のテスト(モックの使用),gem selenium-webdriver/ChromeDriverを用いたブラウザテスト)
 
 - インフラ
