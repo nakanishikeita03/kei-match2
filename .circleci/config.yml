@@ -20,7 +20,6 @@ jobs:
           command: |
                 sudo apt update
                 sudo apt-get install default-mysql-client
-      - run: gem install mysql2 -v '0.4.1' -- --with-opt-lib=/usr/local/opt/openssl/lib --with-opt-include=-I/usr/local/opt/openssl/include
       - run:
           name: bundle install
           command: bundle install
